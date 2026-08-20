@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#07111f">
+
+  <title>Astheria — Open Arms</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      color: #f4efe4;
+
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          rgba(216,181,106,0.14),
+          transparent 30%
+        ),
+        linear-gradient(
+          160deg,
+          #07111f,
+          #0d1d31
+        );
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      overflow-x: hidden;
+    }
+
+    /* ESTRELLAS */
+
+    .stars {
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+
+      opacity: 0.7;
+
+      background-image:
+        radial-gradient(
+          circle,
+          rgba(255,255,255,0.85) 1px,
+          transparent 1.5px
+        ),
+        radial-gradient(
+          circle,
+          rgba(216,181,106,0.55) 1px,
+          transparent 1.5px
+        );
+
+      background-size:
+        97px 113px,
+        151px 137px;
+
+      background-position:
+        17px 29px,
+        61px 13px;
+    }
+
+    /* CONTENIDO */
+
+    main {
+      width: min(92vw, 460px);
+
+      padding: 42px 24px;
+
+      text-align: center;
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+    /* SÍMBOLO */
+
+    .symbol {
+
+      width: 104px;
+      height: 104px;
+
+      margin: 0 auto 25px;
+
+      border:
+        1px solid
+        rgba(216,181,106,0.55);
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      position: relative;
+
+      box-shadow:
+        0 0 45px
+        rgba(216,181,106,0.08);
+    }
+
+    .symbol::before,
+    .symbol::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 8px;
+      height: 8px;
+
+      background: #d8b56a;
+
+      border-radius: 50%;
+    }
+
+    .symbol::before {
+
+      top: 13px;
+      left: 22px;
+
+    }
+
+    .symbol::after {
+
+      bottom: 18px;
+      right: 17px;
+
+    }
+
+    .star {
+
+      color: #f0d99a;
+
+      font-size: 43px;
+
+      line-height: 1;
+
+    }
+
+    /* NOMBRE */
+
+    .name {
+
+      letter-spacing: 0.32em;
+
+      margin-left: 0.32em;
+
+      color: #f0d99a;
+
+      font-size:
+        clamp(
+          24px,
+          8vw,
+          34px
+        );
+
+      font-weight: normal;
+    }
+
+    .subtitle {
+
+      margin-top: 12px;
+
+      color: #b9b3a6;
+
+      font-size: 15px;
+
+      font-style: italic;
+
+      letter-spacing: 0.08em;
+    }
+
+    /* SEPARADOR */
+
+    .divider {
+
+      width: 90px;
+
+      height: 1px;
+
+      margin: 28px auto;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #d8b56a,
+          transparent
+        );
+    }
+
+    /* OPEN ARMS */
+
+    h1 {
+
+      margin: 0;
+
+      font-size:
+        clamp(
+          34px,
+          10vw,
+          48px
+        );
+
+      font-weight: normal;
+
+      letter-spacing: 0.08em;
+    }
+
+    .epic {
+
+      margin-top: 8px;
+
+      color: #b9b3a6;
+
+      font-size: 15px;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+    /* MENSAJE */
+
+    .message {
+
+      margin:
+        28px auto
+        30px;
+
+      max-width: 330px;
+
+      color: #d8d2c5;
+
+      line-height: 1.7;
+
+      font-size: 16px;
+    }
+
+    /* BOTÓN */
+
+    .play {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 11px;
+
+      padding:
+        15px
+        28px;
+
+      border:
+        1px solid
+        rgba(216,181,106,0.75);
+
+      border-radius: 999px;
+
+      color: #101a27;
+
+      background: #f0d99a;
+
+      text-decoration: none;
+
+      font-family: inherit;
+
+      font-size: 17px;
+
+      letter-spacing: 0.04em;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+      box-shadow:
+        0 8px 30px
+        rgba(0,0,0,0.25);
+    }
+
+    .play:hover {
+
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 10px 34px
+        rgba(216,181,106,0.2);
+    }
+
+    .play span {
+
+      font-size: 18px;
+
+    }
+
+    /* PIE */
+
+    footer {
+
+      margin-top: 45px;
+
+      color:
+        rgba(
+          216,
+          210,
+          197,
+          0.55
+        );
+
+      font-size: 12px;
+
+      letter-spacing: 0.08em;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="stars"></div>
+
+  <main>
+
+    <!-- SÍMBOLO DE ASTHERIA -->
+
+    <div
+      class="symbol"
+      aria-hidden="true"
+    >
+
+      <div class="star">
+        ✦
+      </div>
+
+    </div>
+
+
+    <!-- NOMBRE -->
+
+    <div class="name">
+      ASTHERIA
+    </div>
+
+    <div class="subtitle">
+      a little piece of a journey
+    </div>
+
+
+    <div class="divider"></div>
+
+
+    <!-- CANCIÓN -->
+
+    <h1>
+      Open Arms
+    </h1>
+
+    <div class="epic">
+      EPIC: The Musical
+    </div>
+
+
+    <!-- MENSAJE -->
+
+    <p class="message">
+
+      Algunas canciones encuentran
+      su camino hasta la persona correcta.
+
+      <br>
+
+      Esta encontró el suyo hasta ti.
+
+    </p>
+
+
+    <!-- BOTÓN -->
+
+    <a
+      class="play"
+      href="#"
+      id="playButton"
+    >
+
+      <span>▶</span>
+
+      Escuchar Open Arms
+
+    </a>
+
+
+    <!-- PIE -->
+
+    <footer>
+
+      Made especially for Astheria · 2026
+
+    </footer>
+
+  </main>
+
+
+</body>
+
+</html>
