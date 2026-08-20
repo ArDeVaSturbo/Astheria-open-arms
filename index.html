@@ -5,15 +5,9 @@
 
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="theme-color"
-    content="#07111f"
-  >
+  <meta name="theme-color" content="#07111f">
 
   <meta
     name="description"
@@ -21,7 +15,6 @@
   >
 
   <title>Astheria — Open Arms</title>
-
 
   <style>
 
@@ -78,9 +71,9 @@
     }
 
 
-    /* =====================================
+    /* ================================
        CIELO ESTRELLADO
-       ===================================== */
+       ================================ */
 
     .stars {
 
@@ -174,9 +167,9 @@
     }
 
 
-    /* =====================================
+    /* ================================
        ESTRELLAS FUGACES
-       ===================================== */
+       ================================ */
 
     .shooting-star {
 
@@ -188,26 +181,18 @@
 
       border-radius: 50%;
 
-      background:
-        #fffdf0;
+      background: #fffdf0;
 
       box-shadow:
-
         0 0 7px #ffffff,
-
         0 0 16px #f0d99a,
+        0 0 28px rgba(240,217,154,0.75);
 
-        0 0 28px
-        rgba(240,217,154,0.75);
+      pointer-events: none;
 
-      pointer-events:
-        none;
+      z-index: 2;
 
-      z-index:
-        2;
-
-      opacity:
-        0;
+      opacity: 0;
 
       transform:
         translate3d(0,0,0)
@@ -217,26 +202,19 @@
 
     .shooting-star::after {
 
-      content:
-        "";
+      content: "";
 
-      position:
-        absolute;
+      position: absolute;
 
-      width:
-        120px;
+      width: 120px;
 
-      height:
-        3px;
+      height: 3px;
 
-      left:
-        2px;
+      left: 2px;
 
-      top:
-        1px;
+      top: 1px;
 
       background:
-
         linear-gradient(
           90deg,
           #fff8df,
@@ -245,47 +223,37 @@
           transparent
         );
 
-      border-radius:
-        50%;
+      border-radius: 50%;
     }
 
 
-    /* =====================================
-       SÍMBOLO
-       ===================================== */
+    /* ================================
+       CÍRCULO
+       ================================ */
 
     .symbol {
 
-      width:
-        108px;
+      width: 108px;
 
-      height:
-        108px;
+      height: 108px;
 
-      margin:
-        0 auto 26px;
+      margin: 0 auto 26px;
 
       border:
         1px solid
         rgba(216,181,106,0.55);
 
-      border-radius:
-        50%;
+      border-radius: 50%;
 
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      justify-content:
-        center;
+      justify-content: center;
 
-      position:
-        relative;
+      position: relative;
 
       box-shadow:
-
         0 0 45px
         rgba(216,181,106,0.08);
 
@@ -294,23 +262,19 @@
     }
 
 
-    /* =====================================
-       ESTRELLA DE 8 PUNTAS
-       ===================================== */
+    /* ================================
+       ESTRELLA CLÁSICA DE 5 PUNTAS
+       ================================ */
 
-    .eight-point-star {
+    .five-point-star {
 
-      width:
-        58px;
+      width: 58px;
 
-      height:
-        58px;
+      height: 58px;
 
-      display:
-        block;
+      display: block;
 
       filter:
-
         drop-shadow(
           0 0 9px
           rgba(240,217,154,0.35)
@@ -318,14 +282,13 @@
     }
 
 
-    /* =====================================
+    /* ================================
        NOMBRE
-       ===================================== */
+       ================================ */
 
     .name {
 
-      color:
-        #f0d99a;
+      color: #f0d99a;
 
       font-size:
         clamp(
@@ -334,53 +297,41 @@
           35px
         );
 
-      letter-spacing:
-        0.30em;
+      letter-spacing: 0.30em;
 
-      margin-left:
-        0.30em;
+      margin-left: 0.30em;
 
-      font-weight:
-        normal;
+      font-weight: normal;
     }
 
 
     .subtitle {
 
-      margin-top:
-        13px;
+      margin-top: 13px;
 
-      color:
-        #b9b3a6;
+      color: #b9b3a6;
 
-      font-size:
-        15px;
+      font-size: 15px;
 
-      font-style:
-        italic;
+      font-style: italic;
 
-      letter-spacing:
-        0.05em;
+      letter-spacing: 0.05em;
     }
 
 
-    /* =====================================
+    /* ================================
        SEPARADOR
-       ===================================== */
+       ================================ */
 
     .divider {
 
-      width:
-        100px;
+      width: 100px;
 
-      height:
-        1px;
+      height: 1px;
 
-      margin:
-        30px auto;
+      margin: 30px auto;
 
       background:
-
         linear-gradient(
           90deg,
           transparent,
@@ -390,17 +341,15 @@
     }
 
 
-    /* =====================================
+    /* ================================
        CANCIÓN
-       ===================================== */
+       ================================ */
 
     h1 {
 
-      margin:
-        0;
+      margin: 0;
 
-      color:
-        #f4efe4;
+      color: #f4efe4;
 
       font-size:
         clamp(
@@ -409,111 +358,85 @@
           52px
         );
 
-      font-weight:
-        normal;
+      font-weight: normal;
 
-      letter-spacing:
-        0.06em;
+      letter-spacing: 0.06em;
     }
 
 
     .epic {
 
-      margin-top:
-        9px;
+      margin-top: 9px;
 
-      color:
-        #b9b3a6;
+      color: #b9b3a6;
 
-      font-size:
-        14px;
+      font-size: 14px;
 
-      letter-spacing:
-        0.16em;
+      letter-spacing: 0.16em;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
     }
 
 
-    /* =====================================
+    /* ================================
        MENSAJE
-       ===================================== */
+       ================================ */
 
     .message {
 
-      margin:
-        30px auto 32px;
+      margin: 30px auto 32px;
 
-      max-width:
-        350px;
+      max-width: 350px;
 
-      color:
-        #d8d2c5;
+      color: #d8d2c5;
 
-      line-height:
-        1.8;
+      line-height: 1.8;
 
-      font-size:
-        16px;
+      font-size: 16px;
     }
 
 
     .message strong {
 
-      color:
-        #f0d99a;
+      color: #f0d99a;
 
-      font-weight:
-        normal;
+      font-weight: normal;
     }
 
 
-    /* =====================================
+    /* ================================
        BOTÓN
-       ===================================== */
+       ================================ */
 
     .play {
 
-      display:
-        inline-flex;
+      display: inline-flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      justify-content:
-        center;
+      justify-content: center;
 
-      gap:
-        11px;
+      gap: 11px;
 
-      padding:
-        16px 29px;
+      padding: 16px 29px;
 
       border:
         1px solid
         rgba(216,181,106,0.75);
 
-      border-radius:
-        999px;
+      border-radius: 999px;
 
-      color:
-        #101a27;
+      color: #101a27;
 
-      background:
-        #f0d99a;
+      background: #f0d99a;
 
-      text-decoration:
-        none;
+      text-decoration: none;
 
-      font-family:
-        inherit;
+      font-family: inherit;
 
-      font-size:
-        17px;
+      font-size: 17px;
 
-      letter-spacing:
-        0.03em;
+      letter-spacing: 0.03em;
 
       transition:
         transform 0.2s ease,
@@ -538,22 +461,19 @@
 
     .play span {
 
-      font-size:
-        18px;
+      font-size: 18px;
     }
 
 
-    /* =====================================
+    /* ================================
        PIE
-       ===================================== */
+       ================================ */
 
     footer {
 
-      margin-top:
-        48px;
+      margin-top: 48px;
 
       color:
-
         rgba(
           216,
           210,
@@ -561,29 +481,25 @@
           0.5
         );
 
-      font-size:
-        12px;
+      font-size: 12px;
 
-      letter-spacing:
-        0.08em;
+      letter-spacing: 0.08em;
     }
 
 
-    /* =====================================
+    /* ================================
        ANIMACIONES
-       ===================================== */
+       ================================ */
 
     @keyframes respirar {
 
       0%,
       100% {
-        transform:
-          scale(1);
+        transform: scale(1);
       }
 
       50% {
-        transform:
-          scale(1.025);
+        transform: scale(1.025);
       }
     }
 
@@ -591,18 +507,15 @@
     @keyframes brilloEstrellas {
 
       0% {
-        opacity:
-          0.35;
+        opacity: 0.35;
       }
 
       50% {
-        opacity:
-          0.8;
+        opacity: 0.8;
       }
 
       100% {
-        opacity:
-          0.45;
+        opacity: 0.45;
       }
     }
 
@@ -620,9 +533,9 @@
   <main>
 
 
-    <!-- ===================================
-         ESTRELLA DE 8 PUNTAS
-         =================================== -->
+    <!-- ==============================
+         ESTRELLA CLÁSICA
+         ============================== -->
 
     <div
       class="symbol"
@@ -630,48 +543,24 @@
     >
 
       <svg
-        class="eight-point-star"
+        class="five-point-star"
         viewBox="0 0 100 100"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
 
-        <!--
-          ESTRELLA DE 8 PUNTAS
-
-          4 puntas principales:
-          arriba, derecha, abajo, izquierda.
-
-          4 puntas diagonales:
-          noreste, sureste, suroeste, noroeste.
-        -->
-
         <polygon
           points="
-            50,2
-            60,39
-            75,10
-            61,42
-            98,25
-            64,47
-            98,50
-            64,53
-            90,75
-            61,59
-            75,90
-            57,62
-            50,98
-            43,62
-            25,90
-            39,59
-            2,75
-            36,53
-            2,50
-            36,47
-            10,25
-            39,41
-            25,10
-            43,39
+            50,4
+            61,38
+            97,38
+            68,59
+            79,94
+            50,73
+            21,94
+            32,59
+            3,38
+            39,38
           "
           fill="#f0d99a"
         />
@@ -770,20 +659,16 @@
 
 
       const inicioX =
-        window.innerWidth
-        *
+        window.innerWidth *
         (
-          0.60
-          +
+          0.60 +
           Math.random() * 0.40
         );
 
 
       const inicioY =
-        Math.random()
-        *
-        window.innerHeight
-        *
+        Math.random() *
+        window.innerHeight *
         0.50;
 
 
@@ -801,8 +686,7 @@
 
 
       const escala =
-        0.7
-        +
+        0.7 +
         Math.random() * 0.7;
 
 
@@ -815,14 +699,12 @@
 
 
       const distancia =
-        250
-        +
+        250 +
         Math.random() * 220;
 
 
       const duracion =
-        900
-        +
+        900 +
         Math.random() * 900;
 
 
@@ -830,23 +712,16 @@
         performance.now();
 
 
-      function moverEstrella(
-        ahora
-      ) {
+      function moverEstrella(ahora) {
 
         const progreso =
           (
-            ahora
-            -
+            ahora -
             inicio
-          )
-          /
-          duracion;
+          ) / duracion;
 
 
-        if (
-          progreso >= 1
-        ) {
+        if (progreso >= 1) {
 
           estrella.remove();
 
@@ -855,8 +730,7 @@
 
 
         const suavizado =
-          1
-          -
+          1 -
           Math.pow(
             1 - progreso,
             2
@@ -864,46 +738,33 @@
 
 
         const x =
-          -distancia
-          *
+          -distancia *
           suavizado;
 
 
         const y =
-          distancia
-          *
+          distancia *
           suavizado;
 
 
-        let opacidad =
-          1;
+        let opacidad = 1;
 
 
-        if (
-          progreso < 0.12
-        ) {
+        if (progreso < 0.12) {
 
           opacidad =
-            progreso
-            /
-            0.12;
+            progreso / 0.12;
 
         }
-        else if (
-          progreso > 0.75
-        ) {
+        else if (progreso > 0.75) {
 
           opacidad =
-            1
-            -
+            1 -
             (
               (
-                progreso
-                -
+                progreso -
                 0.75
-              )
-              /
-              0.25
+              ) / 0.25
             );
         }
 
