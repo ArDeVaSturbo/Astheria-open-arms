@@ -25,12 +25,17 @@
 
   <style>
 
-    /* =========================
+    /* =====================================
        CONFIGURACIÓN GENERAL
-       ========================= */
+       ===================================== */
 
     * {
       box-sizing: border-box;
+    }
+
+
+    html {
+      min-height: 100%;
     }
 
 
@@ -45,21 +50,21 @@
       background:
 
         radial-gradient(
-          circle at 50% 18%,
+          circle at 50% 15%,
           rgba(216,181,106,0.16),
           transparent 30%
         ),
 
         radial-gradient(
-          circle at 15% 80%,
-          rgba(70,110,160,0.12),
-          transparent 28%
+          circle at 20% 80%,
+          rgba(70,110,160,0.14),
+          transparent 30%
         ),
 
         linear-gradient(
           160deg,
-          #07111f,
-          #0d1d31
+          #07111f 0%,
+          #0d1d31 100%
         );
 
       font-family:
@@ -79,9 +84,9 @@
     }
 
 
-    /* =========================
-       CIELO ESTRELLADO
-       ========================= */
+    /* =====================================
+       CIELO
+       ===================================== */
 
     .stars {
 
@@ -89,19 +94,66 @@
 
       inset: 0;
 
+      width: 100%;
+      height: 100%;
+
       pointer-events: none;
 
       overflow: hidden;
-
-      opacity: 0.8;
 
       z-index: 0;
     }
 
 
-    /* ESTRELLAS */
+    /* =====================================
+       ESTRELLAS PEQUEÑAS
+       ===================================== */
 
-    .stars::before,
+    .stars::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background-image:
+
+        radial-gradient(
+          circle,
+          rgba(255,255,255,0.9) 1px,
+          transparent 1.6px
+        ),
+
+        radial-gradient(
+          circle,
+          rgba(240,217,154,0.7) 1px,
+          transparent 1.6px
+        ),
+
+        radial-gradient(
+          circle,
+          rgba(255,255,255,0.55) 1px,
+          transparent 1.5px
+        );
+
+      background-size:
+
+        83px 101px,
+        137px 149px,
+        191px 173px;
+
+      background-position:
+
+        12px 23px,
+        48px 71px,
+        91px 37px;
+
+      animation:
+        brilloEstrellas 5s ease-in-out infinite alternate;
+    }
+
+
     .stars::after {
 
       content: "";
@@ -114,167 +166,275 @@
 
         radial-gradient(
           circle,
-          rgba(255,255,255,0.85) 1px,
-          transparent 1.5px
-        ),
-
-        radial-gradient(
-          circle,
-          rgba(240,217,154,0.65) 1px,
-          transparent 1.5px
-        ),
-
-        radial-gradient(
-          circle,
-          rgba(255,255,255,0.55) 1px,
-          transparent 1.5px
+          rgba(255,255,255,0.8) 1.2px,
+          transparent 1.8px
         );
 
       background-size:
-
-        97px 113px,
-        151px 137px,
-        193px 181px;
+        173px 157px;
 
       background-position:
+        35px 82px;
 
-        17px 29px,
-        61px 13px,
-        103px 47px;
+      opacity:
+        0.45;
 
       animation:
-        parpadeo 7s ease-in-out infinite alternate;
+        brilloEstrellas 7s ease-in-out infinite alternate-reverse;
     }
 
 
-    .stars::after {
-
-      opacity: 0.45;
-
-      animation-delay:
-        -3s;
-    }
-
-
-    /* =========================
+    /* =====================================
        ESTRELLAS FUGACES
-       ========================= */
+       ===================================== */
 
     .shooting-star {
 
       position: fixed;
 
-      width: 3px;
+      width: 4px;
 
-      height: 3px;
+      height: 4px;
 
       background:
-        #fff8df;
+        #fffdf0;
 
       border-radius:
         50%;
 
       box-shadow:
 
-        0 0 6px
-        #fff8df,
+        0 0 7px
+        #ffffff,
 
-        0 0 14px
-        rgba(240,217,154,0.8);
+        0 0 16px
+        #f0d99a,
 
-      transform:
-        rotate(-35deg);
+        0 0 28px
+        rgba(240,217,154,0.65);
 
-      opacity: 0;
+      opacity:
+        0;
 
       pointer-events:
         none;
 
       z-index:
-        0;
+        1;
+
+      transform:
+        rotate(-35deg);
     }
 
 
+    /* COLA DE LA ESTRELLA */
+
     .shooting-star::after {
 
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      right: 2px;
+      width:
+        120px;
 
-      top: 1px;
+      height:
+        3px;
 
-      width: 90px;
+      top:
+        1px;
 
-      height: 2px;
+      right:
+        2px;
 
       background:
 
         linear-gradient(
           90deg,
-          rgba(255,248,223,0),
-          rgba(240,217,154,0.65),
-          rgba(255,248,223,0.9)
+          transparent,
+          rgba(240,217,154,0.15),
+          rgba(240,217,154,0.7),
+          #fff8df
         );
 
-      transform-origin:
-        right center;
+      border-radius:
+        50%;
+
+      box-shadow:
+        0 0 5px
+        rgba(240,217,154,0.5);
     }
 
 
-    /* POSICIONES */
+    /* =====================================
+       POSICIÓN DE CADA FUGAZ
+       ===================================== */
 
     .shooting-star-1 {
 
-      top: 18%;
+      top:
+        12%;
 
-      left: 85%;
+      left:
+        92%;
 
       animation:
-        fugaz 4s ease-out infinite;
+        estrellaFugaz 3.5s linear infinite;
+
+      animation-delay:
+        0.5s;
+    }
+
+
+    .shooting-star-2 {
+
+      top:
+        32%;
+
+      left:
+        80%;
+
+      animation:
+        estrellaFugaz 4s linear infinite;
 
       animation-delay:
         2s;
     }
 
 
-    .shooting-star-2 {
-
-      top: 42%;
-
-      left: 75%;
-
-      animation:
-        fugaz 5s ease-out infinite;
-
-      animation-delay:
-        9s;
-    }
-
-
     .shooting-star-3 {
 
-      top: 12%;
+      top:
+        52%;
 
-      left: 55%;
+      left:
+        95%;
 
       animation:
-        fugaz 4.5s ease-out infinite;
+        estrellaFugaz 3.2s linear infinite;
 
       animation-delay:
-        16s;
+        3.5s;
     }
 
 
-    /* =========================
+    .shooting-star-4 {
+
+      top:
+        22%;
+
+      left:
+        65%;
+
+      animation:
+        estrellaFugaz 4.5s linear infinite;
+
+      animation-delay:
+        5s;
+    }
+
+
+    /* =====================================
+       ANIMACIÓN DE LAS FUGACES
+       ===================================== */
+
+    @keyframes estrellaFugaz {
+
+      0% {
+
+        opacity:
+          0;
+
+        transform:
+          translate(
+            0,
+            0
+          )
+          rotate(-35deg)
+          scale(0.6);
+      }
+
+
+      8% {
+
+        opacity:
+          1;
+      }
+
+
+      15% {
+
+        opacity:
+          1;
+      }
+
+
+      65% {
+
+        opacity:
+          1;
+      }
+
+
+      100% {
+
+        opacity:
+          0;
+
+        transform:
+          translate(
+            -420px,
+            420px
+          )
+          rotate(-35deg)
+          scale(1);
+      }
+
+    }
+
+
+    /* =====================================
+       BRILLO DE LAS ESTRELLAS
+       ===================================== */
+
+    @keyframes brilloEstrellas {
+
+      0% {
+
+        opacity:
+          0.35;
+      }
+
+
+      50% {
+
+        opacity:
+          0.8;
+      }
+
+
+      100% {
+
+        opacity:
+          0.45;
+      }
+
+    }
+
+
+    /* =====================================
        CONTENIDO
-       ========================= */
+       ===================================== */
 
     main {
 
       width:
-        min(92vw, 460px);
+        min(
+          92vw,
+          460px
+        );
 
       padding:
         48px 24px;
@@ -286,16 +446,16 @@
         relative;
 
       z-index:
-        1;
+        5;
 
       animation:
         aparecer 1.4s ease;
     }
 
 
-    /* =========================
+    /* =====================================
        SÍMBOLO DE ASTHERIA
-       ========================= */
+       ===================================== */
 
     .symbol {
 
@@ -310,7 +470,12 @@
 
       border:
         1px solid
-        rgba(216,181,106,0.55);
+        rgba(
+          216,
+          181,
+          106,
+          0.55
+        );
 
       border-radius:
         50%;
@@ -327,7 +492,12 @@
       box-shadow:
 
         0 0 45px
-        rgba(216,181,106,0.08);
+        rgba(
+          216,
+          181,
+          106,
+          0.08
+        );
 
       animation:
         respirar 4s ease-in-out infinite;
@@ -391,13 +561,18 @@
       text-shadow:
 
         0 0 20px
-        rgba(240,217,154,0.25);
+        rgba(
+          240,
+          217,
+          154,
+          0.25
+        );
     }
 
 
-    /* =========================
+    /* =====================================
        NOMBRE
-       ========================= */
+       ===================================== */
 
     .name {
 
@@ -441,9 +616,9 @@
     }
 
 
-    /* =========================
+    /* =====================================
        SEPARADOR
-       ========================= */
+       ===================================== */
 
     .divider {
 
@@ -467,9 +642,9 @@
     }
 
 
-    /* =========================
+    /* =====================================
        OPEN ARMS
-       ========================= */
+       ===================================== */
 
     h1 {
 
@@ -513,15 +688,14 @@
     }
 
 
-    /* =========================
+    /* =====================================
        MENSAJE
-       ========================= */
+       ===================================== */
 
     .message {
 
       margin:
-        30px auto
-        32px;
+        30px auto 32px;
 
       max-width:
         350px;
@@ -547,9 +721,9 @@
     }
 
 
-    /* =========================
+    /* =====================================
        BOTÓN
-       ========================= */
+       ===================================== */
 
     .play {
 
@@ -570,7 +744,12 @@
 
       border:
         1px solid
-        rgba(216,181,106,0.75);
+        rgba(
+          216,
+          181,
+          106,
+          0.75
+        );
 
       border-radius:
         999px;
@@ -604,7 +783,12 @@
       box-shadow:
 
         0 8px 30px
-        rgba(0,0,0,0.25);
+        rgba(
+          0,
+          0,
+          0,
+          0.25
+        );
     }
 
 
@@ -616,7 +800,12 @@
       box-shadow:
 
         0 10px 34px
-        rgba(216,181,106,0.22);
+        rgba(
+          216,
+          181,
+          106,
+          0.22
+        );
     }
 
 
@@ -627,9 +816,9 @@
     }
 
 
-    /* =========================
+    /* =====================================
        PIE
-       ========================= */
+       ===================================== */
 
     footer {
 
@@ -653,9 +842,9 @@
     }
 
 
-    /* =========================
-       ANIMACIONES
-       ========================= */
+    /* =====================================
+       ANIMACIÓN DE ENTRADA
+       ===================================== */
 
     @keyframes aparecer {
 
@@ -665,8 +854,11 @@
           0;
 
         transform:
-          translateY(15px);
+          translateY(
+            15px
+          );
       }
+
 
       to {
 
@@ -674,10 +866,17 @@
           1;
 
         transform:
-          translateY(0);
+          translateY(
+            0
+          );
       }
+
     }
 
+
+    /* =====================================
+       RESPIRACIÓN DEL SÍMBOLO
+       ===================================== */
 
     @keyframes respirar {
 
@@ -686,88 +885,25 @@
 
         transform:
           scale(1);
-
       }
+
 
       50% {
 
         transform:
           scale(1.025);
-
       }
+
     }
 
 
-    @keyframes parpadeo {
-
-      0% {
-
-        opacity:
-          0.35;
-      }
-
-      50% {
-
-        opacity:
-          0.8;
-      }
-
-      100% {
-
-        opacity:
-          0.45;
-      }
-    }
-
-
-    @keyframes fugaz {
-
-      0% {
-
-        opacity:
-          0;
-
-        transform:
-
-          translate(0, 0)
-          rotate(-35deg)
-          scale(0.7);
-      }
-
-
-      8% {
-
-        opacity:
-          1;
-      }
-
-
-      70% {
-
-        opacity:
-          1;
-      }
-
-
-      100% {
-
-        opacity:
-          0;
-
-        transform:
-
-          translate(-280px, 280px)
-          rotate(-35deg)
-          scale(1);
-      }
-    }
-
-
-    /* =========================
+    /* =====================================
        TELÉFONOS PEQUEÑOS
-       ========================= */
+       ===================================== */
 
-    @media (max-width: 380px) {
+    @media (
+      max-width: 380px
+    ) {
 
       main {
 
@@ -798,13 +934,13 @@
         font-size:
           15px;
       }
+
     }
 
 
-    /* =========================
-       REDUCIR ANIMACIONES
-       SI EL TELÉFONO LO PIDE
-       ========================= */
+    /* =====================================
+       RESPETAR REDUCCIÓN DE MOVIMIENTO
+       ===================================== */
 
     @media (
       prefers-reduced-motion: reduce
@@ -820,6 +956,7 @@
         transition:
           none !important;
       }
+
     }
 
   </style>
@@ -830,31 +967,40 @@
 <body>
 
 
-  <!-- =========================
-       CIELO
-       ========================= -->
+  <!-- =====================================
+       CIELO ESTRELLADO
+       ===================================== -->
 
   <div class="stars"></div>
 
 
-  <!-- ESTRELLAS FUGACES -->
+  <!-- =====================================
+       ESTRELLAS FUGACES
+       ===================================== -->
 
   <div
     class="shooting-star shooting-star-1"
   ></div>
 
+
   <div
     class="shooting-star shooting-star-2"
   ></div>
+
 
   <div
     class="shooting-star shooting-star-3"
   ></div>
 
 
-  <!-- =========================
+  <div
+    class="shooting-star shooting-star-4"
+  ></div>
+
+
+  <!-- =====================================
        CONTENIDO PRINCIPAL
-       ========================= -->
+       ===================================== -->
 
   <main>
 
@@ -900,9 +1046,7 @@
     </div>
 
 
-    <!-- =========================
-         MENSAJE
-         ========================= -->
+    <!-- MENSAJE -->
 
     <p class="message">
 
@@ -932,9 +1076,7 @@
     </p>
 
 
-    <!-- =========================
-         BOTÓN
-         ========================= -->
+    <!-- BOTÓN -->
 
     <a
       class="play"
@@ -951,9 +1093,7 @@
     </a>
 
 
-    <!-- =========================
-         PIE
-         ========================= -->
+    <!-- PIE -->
 
     <footer>
 
