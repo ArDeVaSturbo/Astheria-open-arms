@@ -5,9 +5,15 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <meta name="theme-color" content="#07111f">
+  <meta
+    name="theme-color"
+    content="#07111f"
+  >
 
   <meta
     name="description"
@@ -16,11 +22,13 @@
 
   <title>Astheria — Open Arms</title>
 
+
   <style>
 
     * {
       box-sizing: border-box;
     }
+
 
     html,
     body {
@@ -28,6 +36,7 @@
       width: 100%;
       min-height: 100%;
     }
+
 
     body {
 
@@ -71,9 +80,9 @@
     }
 
 
-    /* ================================
+    /* =====================================
        CIELO ESTRELLADO
-       ================================ */
+       ===================================== */
 
     .stars {
 
@@ -167,9 +176,9 @@
     }
 
 
-    /* ================================
+    /* =====================================
        ESTRELLAS FUGACES
-       ================================ */
+       ===================================== */
 
     .shooting-star {
 
@@ -227,9 +236,30 @@
     }
 
 
-    /* ================================
-       CÍRCULO
-       ================================ */
+    /* =====================================
+       CONTENIDO
+       ===================================== */
+
+    main {
+
+      width: 100%;
+
+      max-width: 560px;
+
+      padding:
+        55px 24px;
+
+      text-align: center;
+
+      position: relative;
+
+      z-index: 3;
+    }
+
+
+    /* =====================================
+       SÍMBOLO DE ASTHERIA
+       ===================================== */
 
     .symbol {
 
@@ -237,7 +267,8 @@
 
       height: 108px;
 
-      margin: 0 auto 26px;
+      margin:
+        0 auto 26px;
 
       border:
         1px solid
@@ -262,9 +293,9 @@
     }
 
 
-    /* ================================
+    /* =====================================
        ESTRELLA CLÁSICA DE 5 PUNTAS
-       ================================ */
+       ===================================== */
 
     .five-point-star {
 
@@ -282,13 +313,14 @@
     }
 
 
-    /* ================================
+    /* =====================================
        NOMBRE
-       ================================ */
+       ===================================== */
 
     .name {
 
-      color: #f0d99a;
+      color:
+        #f0d99a;
 
       font-size:
         clamp(
@@ -297,39 +329,50 @@
           35px
         );
 
-      letter-spacing: 0.30em;
+      letter-spacing:
+        0.30em;
 
-      margin-left: 0.30em;
+      margin-left:
+        0.30em;
 
-      font-weight: normal;
+      font-weight:
+        normal;
     }
 
 
     .subtitle {
 
-      margin-top: 13px;
+      margin-top:
+        13px;
 
-      color: #b9b3a6;
+      color:
+        #b9b3a6;
 
-      font-size: 15px;
+      font-size:
+        15px;
 
-      font-style: italic;
+      font-style:
+        italic;
 
-      letter-spacing: 0.05em;
+      letter-spacing:
+        0.05em;
     }
 
 
-    /* ================================
+    /* =====================================
        SEPARADOR
-       ================================ */
+       ===================================== */
 
     .divider {
 
-      width: 100px;
+      width:
+        100px;
 
-      height: 1px;
+      height:
+        1px;
 
-      margin: 30px auto;
+      margin:
+        30px auto;
 
       background:
         linear-gradient(
@@ -341,15 +384,16 @@
     }
 
 
-    /* ================================
+    /* =====================================
        CANCIÓN
-       ================================ */
+       ===================================== */
 
     h1 {
 
       margin: 0;
 
-      color: #f4efe4;
+      color:
+        #f4efe4;
 
       font-size:
         clamp(
@@ -358,93 +402,172 @@
           52px
         );
 
-      font-weight: normal;
+      font-weight:
+        normal;
 
-      letter-spacing: 0.06em;
+      letter-spacing:
+        0.06em;
     }
 
 
     .epic {
 
-      margin-top: 9px;
+      margin-top:
+        9px;
 
-      color: #b9b3a6;
+      color:
+        #b9b3a6;
 
-      font-size: 14px;
+      font-size:
+        14px;
 
-      letter-spacing: 0.16em;
+      letter-spacing:
+        0.16em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
     }
 
 
-    /* ================================
+    /* =====================================
        MENSAJE
-       ================================ */
+       ===================================== */
 
     .message {
 
-      margin: 30px auto 32px;
+      margin:
+        30px auto 30px;
 
-      max-width: 350px;
+      max-width:
+        350px;
 
-      color: #d8d2c5;
+      color:
+        #d8d2c5;
 
-      line-height: 1.8;
+      line-height:
+        1.8;
 
-      font-size: 16px;
+      font-size:
+        16px;
     }
 
 
     .message strong {
 
-      color: #f0d99a;
+      color:
+        #f0d99a;
 
-      font-weight: normal;
+      font-weight:
+        normal;
     }
 
 
-    /* ================================
-       BOTÓN
-       ================================ */
+    /* =====================================
+       REPRODUCTOR
+       ===================================== */
+
+    .player {
+
+      width:
+        100%;
+
+      max-width:
+        380px;
+
+      margin:
+        0 auto;
+
+      padding:
+        20px;
+
+      border:
+        1px solid
+        rgba(216,181,106,0.28);
+
+      border-radius:
+        18px;
+
+      background:
+        rgba(
+          7,
+          17,
+          31,
+          0.55
+        );
+
+      backdrop-filter:
+        blur(8px);
+
+      box-shadow:
+        0 12px 40px
+        rgba(0,0,0,0.20);
+    }
+
+
+    .player-title {
+
+      color:
+        #f0d99a;
+
+      font-size:
+        14px;
+
+      letter-spacing:
+        0.10em;
+
+      margin-bottom:
+        15px;
+    }
+
 
     .play {
 
-      display: inline-flex;
+      width:
+        100%;
 
-      align-items: center;
+      display:
+        flex;
 
-      justify-content: center;
+      align-items:
+        center;
 
-      gap: 11px;
+      justify-content:
+        center;
 
-      padding: 16px 29px;
+      gap:
+        11px;
+
+      padding:
+        15px 25px;
 
       border:
         1px solid
         rgba(216,181,106,0.75);
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
-      color: #101a27;
+      color:
+        #101a27;
 
-      background: #f0d99a;
+      background:
+        #f0d99a;
 
-      text-decoration: none;
+      cursor:
+        pointer;
 
-      font-family: inherit;
+      font-family:
+        inherit;
 
-      font-size: 17px;
+      font-size:
+        17px;
 
-      letter-spacing: 0.03em;
+      letter-spacing:
+        0.03em;
 
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
-
-      box-shadow:
-        0 8px 30px
-        rgba(0,0,0,0.25);
     }
 
 
@@ -461,17 +584,100 @@
 
     .play span {
 
-      font-size: 18px;
+      font-size:
+        18px;
     }
 
 
-    /* ================================
+    /* =====================================
+       BARRA DE PROGRESO
+       ===================================== */
+
+    .progress-container {
+
+      margin-top:
+        18px;
+
+      cursor:
+        pointer;
+    }
+
+
+    .progress {
+
+      width:
+        100%;
+
+      height:
+        5px;
+
+      border-radius:
+        999px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.15
+        );
+
+      overflow:
+        hidden;
+    }
+
+
+    .progress-bar {
+
+      width:
+        0%;
+
+      height:
+        100%;
+
+      background:
+        #f0d99a;
+
+      border-radius:
+        999px;
+
+      transition:
+        width 0.1s linear;
+    }
+
+
+    .time {
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      margin-top:
+        8px;
+
+      color:
+        rgba(
+          216,
+          210,
+          197,
+          0.65
+        );
+
+      font-size:
+        12px;
+    }
+
+
+    /* =====================================
        PIE
-       ================================ */
+       ===================================== */
 
     footer {
 
-      margin-top: 48px;
+      margin-top:
+        45px;
 
       color:
         rgba(
@@ -481,25 +687,29 @@
           0.5
         );
 
-      font-size: 12px;
+      font-size:
+        12px;
 
-      letter-spacing: 0.08em;
+      letter-spacing:
+        0.08em;
     }
 
 
-    /* ================================
+    /* =====================================
        ANIMACIONES
-       ================================ */
+       ===================================== */
 
     @keyframes respirar {
 
       0%,
       100% {
-        transform: scale(1);
+        transform:
+          scale(1);
       }
 
       50% {
-        transform: scale(1.025);
+        transform:
+          scale(1.025);
       }
     }
 
@@ -507,15 +717,18 @@
     @keyframes brilloEstrellas {
 
       0% {
-        opacity: 0.35;
+        opacity:
+          0.35;
       }
 
       50% {
-        opacity: 0.8;
+        opacity:
+          0.8;
       }
 
       100% {
-        opacity: 0.45;
+        opacity:
+          0.45;
       }
     }
 
@@ -527,15 +740,17 @@
 <body>
 
 
+  <!-- CIELO -->
+
   <div class="stars"></div>
 
 
   <main>
 
 
-    <!-- ==============================
-         ESTRELLA CLÁSICA
-         ============================== -->
+    <!-- ===================================
+         ESTRELLA
+         =================================== -->
 
     <div
       class="symbol"
@@ -570,6 +785,8 @@
     </div>
 
 
+    <!-- NOMBRE -->
+
     <div class="name">
       ASTHERIA
     </div>
@@ -583,6 +800,8 @@
     <div class="divider"></div>
 
 
+    <!-- CANCIÓN -->
+
     <h1>
       Open Arms
     </h1>
@@ -592,6 +811,8 @@
       EPIC: The Musical
     </div>
 
+
+    <!-- MENSAJE -->
 
     <p class="message">
 
@@ -621,19 +842,64 @@
     </p>
 
 
-    <a
-      class="play"
-      href="#"
-      id="playButton"
-    >
+    <!-- ===================================
+         REPRODUCTOR
+         =================================== -->
 
-      <span>
-        ▶
-      </span>
+    <div class="player">
 
-      Escuchar Open Arms
+      <div class="player-title">
+        OPEN ARMS · EPIC: THE MUSICAL
+      </div>
 
-    </a>
+
+      <button
+        class="play"
+        id="playButton"
+        type="button"
+      >
+
+        <span id="playIcon">
+          ▶
+        </span>
+
+        <span id="playText">
+          Escuchar Open Arms
+        </span>
+
+      </button>
+
+
+      <div
+        class="progress-container"
+        id="progressContainer"
+      >
+
+        <div class="progress">
+
+          <div
+            class="progress-bar"
+            id="progressBar"
+          ></div>
+
+        </div>
+
+
+        <div class="time">
+
+          <span id="currentTime">
+            0:00
+          </span>
+
+          <span id="duration">
+            0:00
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
 
 
     <footer>
@@ -644,7 +910,308 @@
   </main>
 
 
+  <!-- =====================================
+       AUDIO
+       ===================================== -->
+
+  <audio
+    id="audio"
+    preload="metadata"
+  >
+
+    <source
+      src="audio/open-arms.mp3"
+      type="audio/mpeg"
+    >
+
+    Tu navegador no puede reproducir este audio.
+
+  </audio>
+
+
   <script>
+
+    const audio =
+      document.getElementById(
+        "audio"
+      );
+
+
+    const playButton =
+      document.getElementById(
+        "playButton"
+      );
+
+
+    const playIcon =
+      document.getElementById(
+        "playIcon"
+      );
+
+
+    const playText =
+      document.getElementById(
+        "playText"
+      );
+
+
+    const progressBar =
+      document.getElementById(
+        "progressBar"
+      );
+
+
+    const progressContainer =
+      document.getElementById(
+        "progressContainer"
+      );
+
+
+    const currentTime =
+      document.getElementById(
+        "currentTime"
+      );
+
+
+    const duration =
+      document.getElementById(
+        "duration"
+      );
+
+
+    /* =====================================
+       FORMATO DEL TIEMPO
+       ===================================== */
+
+    function formatoTiempo(segundos) {
+
+      if (
+        !Number.isFinite(segundos)
+      ) {
+
+        return "0:00";
+
+      }
+
+
+      const minutos =
+        Math.floor(
+          segundos / 60
+        );
+
+
+      const segundosRestantes =
+        Math.floor(
+          segundos % 60
+        );
+
+
+      return (
+        minutos +
+        ":" +
+        segundosRestantes
+          .toString()
+          .padStart(2, "0")
+      );
+
+    }
+
+
+    /* =====================================
+       REPRODUCIR / PAUSAR
+       ===================================== */
+
+    playButton.addEventListener(
+      "click",
+      async function() {
+
+        try {
+
+          if (
+            audio.paused
+          ) {
+
+            await audio.play();
+
+          }
+          else {
+
+            audio.pause();
+
+          }
+
+        }
+        catch (error) {
+
+          console.error(
+            "No se pudo reproducir el audio:",
+            error
+          );
+
+          playText.textContent =
+            "No se pudo reproducir";
+
+        }
+
+      }
+    );
+
+
+    /* =====================================
+       CUANDO COMIENZA A REPRODUCIR
+       ===================================== */
+
+    audio.addEventListener(
+      "play",
+      function() {
+
+        playIcon.textContent =
+          "❚❚";
+
+        playText.textContent =
+          "Pausar Open Arms";
+
+      }
+    );
+
+
+    /* =====================================
+       CUANDO SE PAUSA
+       ===================================== */
+
+    audio.addEventListener(
+      "pause",
+      function() {
+
+        playIcon.textContent =
+          "▶";
+
+        playText.textContent =
+          "Escuchar Open Arms";
+
+      }
+    );
+
+
+    /* =====================================
+       DURACIÓN
+       ===================================== */
+
+    audio.addEventListener(
+      "loadedmetadata",
+      function() {
+
+        duration.textContent =
+          formatoTiempo(
+            audio.duration
+          );
+
+      }
+    );
+
+
+    /* =====================================
+       PROGRESO
+       ===================================== */
+
+    audio.addEventListener(
+      "timeupdate",
+      function() {
+
+        if (
+          !audio.duration
+        ) {
+
+          return;
+
+        }
+
+
+        const porcentaje =
+          (
+            audio.currentTime /
+            audio.duration
+          ) * 100;
+
+
+        progressBar.style.width =
+          porcentaje + "%";
+
+
+        currentTime.textContent =
+          formatoTiempo(
+            audio.currentTime
+          );
+
+      }
+    );
+
+
+    /* =====================================
+       TOCAR LA BARRA
+       ===================================== */
+
+    progressContainer.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          !audio.duration
+        ) {
+
+          return;
+
+        }
+
+
+        const rect =
+          progressContainer.getBoundingClientRect();
+
+
+        const posicion =
+          (
+            event.clientX -
+            rect.left
+          )
+          /
+          rect.width;
+
+
+        audio.currentTime =
+          posicion *
+          audio.duration;
+
+      }
+    );
+
+
+    /* =====================================
+       CUANDO TERMINA
+       ===================================== */
+
+    audio.addEventListener(
+      "ended",
+      function() {
+
+        playIcon.textContent =
+          "▶";
+
+        playText.textContent =
+          "Escuchar Open Arms";
+
+        progressBar.style.width =
+          "0%";
+
+        currentTime.textContent =
+          "0:00";
+
+      }
+    );
+
+
+    /* =====================================
+       ESTRELLAS FUGACES
+       ===================================== */
 
     function crearEstrellaFugaz() {
 
@@ -712,20 +1279,26 @@
         performance.now();
 
 
-      function moverEstrella(ahora) {
+      function moverEstrella(
+        ahora
+      ) {
 
         const progreso =
           (
             ahora -
             inicio
-          ) / duracion;
+          ) /
+          duracion;
 
 
-        if (progreso >= 1) {
+        if (
+          progreso >= 1
+        ) {
 
           estrella.remove();
 
           return;
+
         }
 
 
@@ -750,13 +1323,18 @@
         let opacidad = 1;
 
 
-        if (progreso < 0.12) {
+        if (
+          progreso < 0.12
+        ) {
 
           opacidad =
-            progreso / 0.12;
+            progreso /
+            0.12;
 
         }
-        else if (progreso > 0.75) {
+        else if (
+          progreso > 0.75
+        ) {
 
           opacidad =
             1 -
@@ -764,8 +1342,10 @@
               (
                 progreso -
                 0.75
-              ) / 0.25
+              ) /
+              0.25
             );
+
         }
 
 
@@ -798,7 +1378,7 @@
     }
 
 
-    /* Una estrella cada 2 segundos */
+    /* Una fugaz cada 2 segundos */
 
     setInterval(
       crearEstrellaFugaz,
@@ -806,7 +1386,7 @@
     );
 
 
-    /* Primera estrella */
+    /* Primera fugaz */
 
     setTimeout(
       crearEstrellaFugaz,
