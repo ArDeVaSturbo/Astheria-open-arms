@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -21,18 +22,24 @@
 
   <title>Astheria — Open Arms</title>
 
+
   <style>
 
     * {
       box-sizing: border-box;
     }
 
-    html {
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
       min-height: 100%;
     }
 
+
     body {
-      margin: 0;
+
       min-height: 100vh;
 
       color: #f4efe4;
@@ -60,26 +67,32 @@
         serif;
 
       display: flex;
+
       justify-content: center;
+
       align-items: center;
 
       overflow-x: hidden;
+
       position: relative;
     }
 
 
-    /* =================================
-       CIELO ESTRELLADO
-       ================================= */
+    /* =====================================
+       CIELO
+       ===================================== */
 
     .stars {
+
       position: fixed;
+
       inset: 0;
 
       width: 100%;
       height: 100%;
 
       pointer-events: none;
+
       overflow: hidden;
 
       z-index: 0;
@@ -87,22 +100,27 @@
 
 
     .stars::before {
+
       content: "";
 
       position: absolute;
+
       inset: 0;
 
       background-image:
+
         radial-gradient(
           circle,
           rgba(255,255,255,0.9) 1px,
           transparent 1.6px
         ),
+
         radial-gradient(
           circle,
           rgba(240,217,154,0.7) 1px,
           transparent 1.6px
         ),
+
         radial-gradient(
           circle,
           rgba(255,255,255,0.55) 1px,
@@ -110,11 +128,13 @@
         );
 
       background-size:
+
         83px 101px,
         137px 149px,
         191px 173px;
 
       background-position:
+
         12px 23px,
         48px 71px,
         91px 37px;
@@ -125,12 +145,15 @@
 
 
     .stars::after {
+
       content: "";
 
       position: absolute;
+
       inset: 0;
 
       background-image:
+
         radial-gradient(
           circle,
           rgba(255,255,255,0.8) 1.2px,
@@ -143,54 +166,77 @@
       background-position:
         35px 82px;
 
-      opacity: 0.45;
+      opacity:
+        0.45;
 
       animation:
         brilloEstrellas 7s ease-in-out infinite alternate-reverse;
     }
 
 
-    /* =================================
+    /* =====================================
        ESTRELLAS FUGACES
-       ================================= */
+       ===================================== */
 
     .shooting-star {
+
       position: fixed;
 
       width: 4px;
-      height: 4px;
 
-      background: #fffdf0;
+      height: 4px;
 
       border-radius: 50%;
 
+      background:
+        #fffdf0;
+
       box-shadow:
+
         0 0 7px #ffffff,
+
         0 0 16px #f0d99a,
-        0 0 28px rgba(240,217,154,0.65);
 
-      opacity: 0;
+        0 0 28px
+        rgba(240,217,154,0.75);
 
-      pointer-events: none;
+      pointer-events:
+        none;
 
-      z-index: 1;
+      z-index:
+        2;
 
-      transform: rotate(-35deg);
+      opacity:
+        0;
+
+      transform:
+        translate3d(0,0,0)
+        rotate(-35deg);
     }
 
 
     .shooting-star::after {
-      content: "";
 
-      position: absolute;
+      content:
+        "";
 
-      width: 120px;
-      height: 3px;
+      position:
+        absolute;
 
-      top: 1px;
-      right: 2px;
+      width:
+        120px;
+
+      height:
+        3px;
+
+      right:
+        2px;
+
+      top:
+        1px;
 
       background:
+
         linear-gradient(
           90deg,
           transparent,
@@ -199,150 +245,47 @@
           #fff8df
         );
 
-      border-radius: 50%;
-
-      box-shadow:
-        0 0 5px
-        rgba(240,217,154,0.5);
+      border-radius:
+        50%;
     }
 
 
-    .shooting-star-1 {
-      top: 12%;
-      left: 92%;
-
-      animation:
-        estrellaFugaz 3.5s linear infinite;
-
-      animation-delay: 0.5s;
-    }
-
-
-    .shooting-star-2 {
-      top: 32%;
-      left: 80%;
-
-      animation:
-        estrellaFugaz 4s linear infinite;
-
-      animation-delay: 2s;
-    }
-
-
-    .shooting-star-3 {
-      top: 52%;
-      left: 95%;
-
-      animation:
-        estrellaFugaz 3.2s linear infinite;
-
-      animation-delay: 3.5s;
-    }
-
-
-    .shooting-star-4 {
-      top: 22%;
-      left: 65%;
-
-      animation:
-        estrellaFugaz 4.5s linear infinite;
-
-      animation-delay: 5s;
-    }
-
-
-    @keyframes estrellaFugaz {
-
-      0% {
-        opacity: 0;
-
-        transform:
-          translate(0, 0)
-          rotate(-35deg)
-          scale(0.6);
-      }
-
-      8% {
-        opacity: 1;
-      }
-
-      15% {
-        opacity: 1;
-      }
-
-      65% {
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0;
-
-        transform:
-          translate(-420px, 420px)
-          rotate(-35deg)
-          scale(1);
-      }
-    }
-
-
-    @keyframes brilloEstrellas {
-
-      0% {
-        opacity: 0.35;
-      }
-
-      50% {
-        opacity: 0.8;
-      }
-
-      100% {
-        opacity: 0.45;
-      }
-    }
-
-
-    /* =================================
-       CONTENIDO
-       ================================= */
-
-    main {
-      width: min(92vw, 460px);
-
-      padding: 48px 24px;
-
-      text-align: center;
-
-      position: relative;
-
-      z-index: 5;
-
-      animation:
-        aparecer 1.4s ease;
-    }
-
-
-    /* =================================
-       SÍMBOLO DE ASTHERIA
-       ================================= */
+    /* =====================================
+       SÍMBOLO
+       ===================================== */
 
     .symbol {
-      width: 108px;
-      height: 108px;
 
-      margin: 0 auto 26px;
+      width:
+        108px;
+
+      height:
+        108px;
+
+      margin:
+        0 auto 26px;
 
       border:
         1px solid
         rgba(216,181,106,0.55);
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
-      display: grid;
-      place-items: center;
+      display:
+        flex;
 
-      position: relative;
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      position:
+        relative;
 
       box-shadow:
+
         0 0 45px
         rgba(216,181,106,0.08);
 
@@ -352,80 +295,41 @@
 
 
     /*
-      Estrella de seis puntas sólida.
-      Dos triángulos superpuestos.
+      ESTRELLA DE SEIS PUNTAS
+
+      Se dibuja como un único SVG,
+      por lo que no depende de emojis
+      ni de fuentes del teléfono.
     */
 
     .six-point-star {
-      width: 58px;
-      height: 58px;
 
-      position: relative;
+      width:
+        62px;
 
-      display: block;
+      height:
+        62px;
+
+      display:
+        block;
 
       filter:
+
         drop-shadow(
           0 0 9px
-          rgba(240,217,154,0.32)
+          rgba(240,217,154,0.35)
         );
     }
 
 
-    .six-point-star::before,
-    .six-point-star::after {
-      content: "";
-
-      position: absolute;
-
-      width: 0;
-      height: 0;
-
-      left: 50%;
-      top: 50%;
-
-      transform: translate(-50%, -50%);
-    }
-
-
-    /*
-      Triángulo hacia arriba
-    */
-
-    .six-point-star::before {
-      border-left:
-        29px solid transparent;
-
-      border-right:
-        29px solid transparent;
-
-      border-bottom:
-        50px solid #f0d99a;
-    }
-
-
-    /*
-      Triángulo hacia abajo
-    */
-
-    .six-point-star::after {
-      border-left:
-        29px solid transparent;
-
-      border-right:
-        29px solid transparent;
-
-      border-top:
-        50px solid #f0d99a;
-    }
-
-
-    /* =================================
+    /* =====================================
        NOMBRE
-       ================================= */
+       ===================================== */
 
     .name {
-      color: #f0d99a;
+
+      color:
+        #f0d99a;
 
       font-size:
         clamp(
@@ -434,38 +338,53 @@
           35px
         );
 
-      letter-spacing: 0.30em;
+      letter-spacing:
+        0.30em;
 
-      margin-left: 0.30em;
+      margin-left:
+        0.30em;
 
-      font-weight: normal;
+      font-weight:
+        normal;
     }
 
 
     .subtitle {
-      margin-top: 13px;
 
-      color: #b9b3a6;
+      margin-top:
+        13px;
 
-      font-size: 15px;
+      color:
+        #b9b3a6;
 
-      font-style: italic;
+      font-size:
+        15px;
 
-      letter-spacing: 0.05em;
+      font-style:
+        italic;
+
+      letter-spacing:
+        0.05em;
     }
 
 
-    /* =================================
+    /* =====================================
        SEPARADOR
-       ================================= */
+       ===================================== */
 
     .divider {
-      width: 100px;
-      height: 1px;
 
-      margin: 30px auto;
+      width:
+        100px;
+
+      height:
+        1px;
+
+      margin:
+        30px auto;
 
       background:
+
         linear-gradient(
           90deg,
           transparent,
@@ -475,14 +394,17 @@
     }
 
 
-    /* =================================
+    /* =====================================
        CANCIÓN
-       ================================= */
+       ===================================== */
 
     h1 {
-      margin: 0;
 
-      color: #f4efe4;
+      margin:
+        0;
+
+      color:
+        #f4efe4;
 
       font-size:
         clamp(
@@ -491,81 +413,111 @@
           52px
         );
 
-      font-weight: normal;
+      font-weight:
+        normal;
 
-      letter-spacing: 0.06em;
+      letter-spacing:
+        0.06em;
     }
 
 
     .epic {
-      margin-top: 9px;
 
-      color: #b9b3a6;
+      margin-top:
+        9px;
 
-      font-size: 14px;
+      color:
+        #b9b3a6;
 
-      letter-spacing: 0.16em;
+      font-size:
+        14px;
 
-      text-transform: uppercase;
+      letter-spacing:
+        0.16em;
+
+      text-transform:
+        uppercase;
     }
 
 
-    /* =================================
+    /* =====================================
        MENSAJE
-       ================================= */
+       ===================================== */
 
     .message {
+
       margin:
         30px auto 32px;
 
-      max-width: 350px;
+      max-width:
+        350px;
 
-      color: #d8d2c5;
+      color:
+        #d8d2c5;
 
-      line-height: 1.8;
+      line-height:
+        1.8;
 
-      font-size: 16px;
+      font-size:
+        16px;
     }
 
 
     .message strong {
-      color: #f0d99a;
 
-      font-weight: normal;
+      color:
+        #f0d99a;
+
+      font-weight:
+        normal;
     }
 
 
-    /* =================================
+    /* =====================================
        BOTÓN
-       ================================= */
+       ===================================== */
 
     .play {
-      display: inline-flex;
 
-      align-items: center;
-      justify-content: center;
+      display:
+        inline-flex;
 
-      gap: 11px;
+      align-items:
+        center;
 
-      padding: 16px 29px;
+      justify-content:
+        center;
+
+      gap:
+        11px;
+
+      padding:
+        16px 29px;
 
       border:
         1px solid
         rgba(216,181,106,0.75);
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
-      color: #101a27;
+      color:
+        #101a27;
 
-      background: #f0d99a;
+      background:
+        #f0d99a;
 
-      text-decoration: none;
+      text-decoration:
+        none;
 
-      font-family: inherit;
+      font-family:
+        inherit;
 
-      font-size: 17px;
+      font-size:
+        17px;
 
-      letter-spacing: 0.03em;
+      letter-spacing:
+        0.03em;
 
       transition:
         transform 0.2s ease,
@@ -578,6 +530,7 @@
 
 
     .play:hover {
+
       transform:
         translateY(-2px);
 
@@ -588,18 +541,23 @@
 
 
     .play span {
-      font-size: 18px;
+
+      font-size:
+        18px;
     }
 
 
-    /* =================================
+    /* =====================================
        PIE
-       ================================= */
+       ===================================== */
 
     footer {
-      margin-top: 48px;
+
+      margin-top:
+        48px;
 
       color:
+
         rgba(
           216,
           210,
@@ -607,27 +565,33 @@
           0.5
         );
 
-      font-size: 12px;
+      font-size:
+        12px;
 
-      letter-spacing: 0.08em;
+      letter-spacing:
+        0.08em;
     }
 
 
-    /* =================================
-       ANIMACIÓN DE ENTRADA
-       ================================= */
+    /* =====================================
+       ANIMACIONES
+       ===================================== */
 
     @keyframes aparecer {
 
       from {
-        opacity: 0;
+
+        opacity:
+          0;
 
         transform:
           translateY(15px);
       }
 
       to {
-        opacity: 1;
+
+        opacity:
+          1;
 
         transform:
           translateY(0);
@@ -635,83 +599,89 @@
     }
 
 
-    /* =================================
-       RESPIRACIÓN DEL SÍMBOLO
-       ================================= */
-
     @keyframes respirar {
 
       0%,
       100% {
+
         transform:
           scale(1);
       }
 
       50% {
+
         transform:
           scale(1.025);
       }
     }
 
 
-    /* =================================
-       TELÉFONOS PEQUEÑOS
-       ================================= */
+    @keyframes brilloEstrellas {
 
-    @media (max-width: 380px) {
+      0% {
 
-      main {
-        padding:
-          35px 20px;
+        opacity:
+          0.35;
       }
 
-      .symbol {
-        width: 95px;
-        height: 95px;
+      50% {
+
+        opacity:
+          0.8;
       }
 
-      .six-point-star {
-        width: 52px;
-        height: 52px;
-      }
+      100% {
 
-      .six-point-star::before {
-        border-left-width: 26px;
-        border-right-width: 26px;
-        border-bottom-width: 45px;
-      }
-
-      .six-point-star::after {
-        border-left-width: 26px;
-        border-right-width: 26px;
-        border-top-width: 45px;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-
-      .message {
-        font-size: 15px;
+        opacity:
+          0.45;
       }
     }
 
 
-    /* =================================
-       REDUCIR ANIMACIONES
-       ================================= */
+    /* =====================================
+       TELÉFONOS PEQUEÑOS
+       ===================================== */
 
-    @media (prefers-reduced-motion: reduce) {
+    @media (max-width: 380px) {
 
-      *,
-      *::before,
-      *::after {
+      main {
 
-        animation:
-          none !important;
+        padding:
+          35px 20px;
+      }
 
-        transition:
-          none !important;
+
+      .symbol {
+
+        width:
+          95px;
+
+        height:
+          95px;
+      }
+
+
+      .six-point-star {
+
+        width:
+          55px;
+
+        height:
+          55px;
+      }
+
+
+      h1 {
+
+        font-size:
+          34px;
+      }
+
+
+      .message {
+
+        font-size:
+          15px;
       }
     }
 
@@ -723,51 +693,62 @@
 <body>
 
 
-  <!-- CIELO -->
+  <!-- =====================================
+       CIELO
+       ===================================== -->
 
   <div class="stars"></div>
 
 
-  <!-- ESTRELLAS FUGACES -->
-
-  <div
-    class="shooting-star shooting-star-1"
-  ></div>
-
-  <div
-    class="shooting-star shooting-star-2"
-  ></div>
-
-  <div
-    class="shooting-star shooting-star-3"
-  ></div>
-
-  <div
-    class="shooting-star shooting-star-4"
-  ></div>
-
-
-  <!-- CONTENIDO -->
+  <!-- =====================================
+       CONTENIDO
+       ===================================== -->
 
   <main>
 
 
-    <!-- ESTRELLA DE SEIS PUNTAS -->
+    <!-- ===================================
+         ESTRELLA DE SEIS PUNTAS
+         =================================== -->
 
     <div
       class="symbol"
       aria-label="Símbolo de Astheria"
     >
 
-      <span
+      <svg
         class="six-point-star"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
-      ></span>
+      >
+
+        <!-- ESTRELLA SÓLIDA -->
+
+        <polygon
+          points="
+            50,4
+            61,36
+            96,36
+            68,56
+            79,91
+            50,70
+            21,91
+            32,56
+            4,36
+            39,36
+          "
+          fill="#f0d99a"
+        />
+
+      </svg>
 
     </div>
 
 
-    <!-- NOMBRE -->
+    <!-- ===================================
+         NOMBRE
+         =================================== -->
 
     <div class="name">
       ASTHERIA
@@ -782,7 +763,9 @@
     <div class="divider"></div>
 
 
-    <!-- CANCIÓN -->
+    <!-- ===================================
+         CANCIÓN
+         =================================== -->
 
     <h1>
       Open Arms
@@ -794,7 +777,9 @@
     </div>
 
 
-    <!-- MENSAJE -->
+    <!-- ===================================
+         MENSAJE
+         =================================== -->
 
     <p class="message">
 
@@ -824,7 +809,9 @@
     </p>
 
 
-    <!-- BOTÓN -->
+    <!-- ===================================
+         BOTÓN
+         =================================== -->
 
     <a
       class="play"
@@ -841,7 +828,9 @@
     </a>
 
 
-    <!-- PIE -->
+    <!-- ===================================
+         PIE
+         =================================== -->
 
     <footer>
       Hecho especialmente para ti · 2026
@@ -849,6 +838,217 @@
 
 
   </main>
+
+
+  <!-- =====================================
+       JAVASCRIPT
+       ESTRELLAS FUGACES
+       ===================================== -->
+
+  <script>
+
+    const cielo =
+      document.querySelector(".stars");
+
+
+    function crearEstrellaFugaz() {
+
+      const estrella =
+        document.createElement("div");
+
+      estrella.className =
+        "shooting-star";
+
+
+      /*
+        Posición inicial.
+        Aparecen principalmente
+        desde la parte superior/derecha.
+      */
+
+      const inicioX =
+        window.innerWidth
+        * (
+          0.55 +
+          Math.random() * 0.5
+        );
+
+
+      const inicioY =
+        Math.random()
+        * window.innerHeight
+        * 0.55;
+
+
+      estrella.style.left =
+        inicioX + "px";
+
+
+      estrella.style.top =
+        inicioY + "px";
+
+
+      document.body.appendChild(
+        estrella
+      );
+
+
+      /*
+        Tamaño ligeramente aleatorio.
+      */
+
+      const escala =
+        0.7 +
+        Math.random() * 0.7;
+
+
+      estrella.style.width =
+        (3 * escala) + "px";
+
+
+      estrella.style.height =
+        (3 * escala) + "px";
+
+
+      /*
+        Distancia del recorrido.
+      */
+
+      const distancia =
+        250 +
+        Math.random() * 220;
+
+
+      /*
+        Duración.
+      */
+
+      const duracion =
+        900 +
+        Math.random() * 900;
+
+
+      /*
+        Animación manual usando
+        requestAnimationFrame.
+      */
+
+      const inicio =
+        performance.now();
+
+
+      function moverEstrella(
+        ahora
+      ) {
+
+        const progreso =
+          (ahora - inicio)
+          / duracion;
+
+
+        if (progreso >= 1) {
+
+          estrella.remove();
+
+          return;
+        }
+
+
+        /*
+          Suavizado.
+        */
+
+        const suavizado =
+          1 -
+          Math.pow(
+            1 - progreso,
+            2
+          );
+
+
+        const x =
+          -distancia
+          * suavizado;
+
+
+        const y =
+          distancia
+          * suavizado;
+
+
+        /*
+          Aparición y desaparición.
+        */
+
+        let opacidad =
+          1;
+
+
+        if (progreso < 0.12) {
+
+          opacidad =
+            progreso / 0.12;
+
+        }
+        else if (progreso > 0.75) {
+
+          opacidad =
+            1 -
+            (
+              (progreso - 0.75)
+              / 0.25
+            );
+        }
+
+
+        estrella.style.opacity =
+          opacidad;
+
+
+        estrella.style.transform =
+          `translate3d(
+            ${x}px,
+            ${y}px,
+            0
+          )
+          rotate(-35deg)`;
+
+
+        requestAnimationFrame(
+          moverEstrella
+        );
+      }
+
+
+      requestAnimationFrame(
+        moverEstrella
+      );
+
+    }
+
+
+    /*
+      Una estrella aproximadamente
+      cada 2 segundos.
+    */
+
+    setInterval(
+      crearEstrellaFugaz,
+      2000
+    );
+
+
+    /*
+      Primera estrella después
+      de medio segundo.
+    */
+
+    setTimeout(
+      crearEstrellaFugaz,
+      500
+    );
+
+  </script>
 
 
 </body>
