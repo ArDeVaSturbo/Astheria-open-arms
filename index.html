@@ -15,10 +15,19 @@
     content="#07111f"
   >
 
+  <meta
+    name="description"
+    content="Un pequeño recuerdo para Astheria."
+  >
+
   <title>Astheria — Open Arms</title>
 
 
   <style>
+
+    /* =========================
+       CONFIGURACIÓN GENERAL
+       ========================= */
 
     * {
       box-sizing: border-box;
@@ -70,7 +79,9 @@
     }
 
 
-    /* ESTRELLAS */
+    /* =========================
+       CIELO ESTRELLADO
+       ========================= */
 
     .stars {
 
@@ -80,7 +91,24 @@
 
       pointer-events: none;
 
-      opacity: 0.7;
+      overflow: hidden;
+
+      opacity: 0.8;
+
+      z-index: 0;
+    }
+
+
+    /* ESTRELLAS */
+
+    .stars::before,
+    .stars::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
 
       background-image:
 
@@ -92,23 +120,156 @@
 
         radial-gradient(
           circle,
-          rgba(216,181,106,0.55) 1px,
+          rgba(240,217,154,0.65) 1px,
+          transparent 1.5px
+        ),
+
+        radial-gradient(
+          circle,
+          rgba(255,255,255,0.55) 1px,
           transparent 1.5px
         );
 
       background-size:
 
         97px 113px,
-        151px 137px;
+        151px 137px,
+        193px 181px;
 
       background-position:
 
         17px 29px,
-        61px 13px;
+        61px 13px,
+        103px 47px;
+
+      animation:
+        parpadeo 7s ease-in-out infinite alternate;
     }
 
 
-    /* CONTENIDO */
+    .stars::after {
+
+      opacity: 0.45;
+
+      animation-delay:
+        -3s;
+    }
+
+
+    /* =========================
+       ESTRELLAS FUGACES
+       ========================= */
+
+    .shooting-star {
+
+      position: fixed;
+
+      width: 3px;
+
+      height: 3px;
+
+      background:
+        #fff8df;
+
+      border-radius:
+        50%;
+
+      box-shadow:
+
+        0 0 6px
+        #fff8df,
+
+        0 0 14px
+        rgba(240,217,154,0.8);
+
+      transform:
+        rotate(-35deg);
+
+      opacity: 0;
+
+      pointer-events:
+        none;
+
+      z-index:
+        0;
+    }
+
+
+    .shooting-star::after {
+
+      content: "";
+
+      position: absolute;
+
+      right: 2px;
+
+      top: 1px;
+
+      width: 90px;
+
+      height: 2px;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          rgba(255,248,223,0),
+          rgba(240,217,154,0.65),
+          rgba(255,248,223,0.9)
+        );
+
+      transform-origin:
+        right center;
+    }
+
+
+    /* POSICIONES */
+
+    .shooting-star-1 {
+
+      top: 18%;
+
+      left: 85%;
+
+      animation:
+        fugaz 4s ease-out infinite;
+
+      animation-delay:
+        2s;
+    }
+
+
+    .shooting-star-2 {
+
+      top: 42%;
+
+      left: 75%;
+
+      animation:
+        fugaz 5s ease-out infinite;
+
+      animation-delay:
+        9s;
+    }
+
+
+    .shooting-star-3 {
+
+      top: 12%;
+
+      left: 55%;
+
+      animation:
+        fugaz 4.5s ease-out infinite;
+
+      animation-delay:
+        16s;
+    }
+
+
+    /* =========================
+       CONTENIDO
+       ========================= */
 
     main {
 
@@ -118,24 +279,31 @@
       padding:
         48px 24px;
 
-      text-align: center;
+      text-align:
+        center;
 
-      position: relative;
+      position:
+        relative;
 
-      z-index: 1;
+      z-index:
+        1;
 
       animation:
         aparecer 1.4s ease;
     }
 
 
-    /* SÍMBOLO */
+    /* =========================
+       SÍMBOLO DE ASTHERIA
+       ========================= */
 
     .symbol {
 
-      width: 108px;
+      width:
+        108px;
 
-      height: 108px;
+      height:
+        108px;
 
       margin:
         0 auto 26px;
@@ -144,52 +312,68 @@
         1px solid
         rgba(216,181,106,0.55);
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
-      display: grid;
+      display:
+        grid;
 
-      place-items: center;
+      place-items:
+        center;
 
-      position: relative;
+      position:
+        relative;
 
       box-shadow:
 
         0 0 45px
         rgba(216,181,106,0.08);
+
+      animation:
+        respirar 4s ease-in-out infinite;
     }
 
 
     .symbol::before,
     .symbol::after {
 
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      width: 7px;
+      width:
+        7px;
 
-      height: 7px;
+      height:
+        7px;
 
       background:
         #d8b56a;
 
-      border-radius: 50%;
+      border-radius:
+        50%;
     }
 
 
     .symbol::before {
 
-      top: 15px;
+      top:
+        15px;
 
-      left: 23px;
+      left:
+        23px;
     }
 
 
     .symbol::after {
 
-      bottom: 18px;
+      bottom:
+        18px;
 
-      right: 19px;
+      right:
+        19px;
     }
 
 
@@ -201,15 +385,19 @@
       font-size:
         46px;
 
-      line-height: 1;
+      line-height:
+        1;
 
       text-shadow:
+
         0 0 20px
         rgba(240,217,154,0.25);
     }
 
 
-    /* ASTHERIA */
+    /* =========================
+       NOMBRE
+       ========================= */
 
     .name {
 
@@ -253,7 +441,9 @@
     }
 
 
-    /* SEPARADOR */
+    /* =========================
+       SEPARADOR
+       ========================= */
 
     .divider {
 
@@ -277,7 +467,9 @@
     }
 
 
-    /* CANCIÓN */
+    /* =========================
+       OPEN ARMS
+       ========================= */
 
     h1 {
 
@@ -321,7 +513,9 @@
     }
 
 
-    /* MENSAJE */
+    /* =========================
+       MENSAJE
+       ========================= */
 
     .message {
 
@@ -353,7 +547,9 @@
     }
 
 
-    /* BOTÓN */
+    /* =========================
+       BOTÓN
+       ========================= */
 
     .play {
 
@@ -398,10 +594,15 @@
         0.03em;
 
       transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+
+        transform
+        0.2s ease,
+
+        box-shadow
+        0.2s ease;
 
       box-shadow:
+
         0 8px 30px
         rgba(0,0,0,0.25);
     }
@@ -413,6 +614,7 @@
         translateY(-2px);
 
       box-shadow:
+
         0 10px 34px
         rgba(216,181,106,0.22);
     }
@@ -425,7 +627,9 @@
     }
 
 
-    /* PIE */
+    /* =========================
+       PIE
+       ========================= */
 
     footer {
 
@@ -433,6 +637,7 @@
         48px;
 
       color:
+
         rgba(
           216,
           210,
@@ -448,7 +653,9 @@
     }
 
 
-    /* ANIMACIÓN */
+    /* =========================
+       ANIMACIONES
+       ========================= */
 
     @keyframes aparecer {
 
@@ -472,33 +679,146 @@
     }
 
 
-    /* ANIMACIÓN SUAVE DEL SÍMBOLO */
+    @keyframes respirar {
 
-    @media (
-      prefers-reduced-motion: no-preference
-    ) {
+      0%,
+      100% {
 
-      .symbol {
+        transform:
+          scale(1);
 
-        animation:
-          respirar 4s ease-in-out infinite;
+      }
+
+      50% {
+
+        transform:
+          scale(1.025);
+
+      }
+    }
+
+
+    @keyframes parpadeo {
+
+      0% {
+
+        opacity:
+          0.35;
+      }
+
+      50% {
+
+        opacity:
+          0.8;
+      }
+
+      100% {
+
+        opacity:
+          0.45;
+      }
+    }
+
+
+    @keyframes fugaz {
+
+      0% {
+
+        opacity:
+          0;
+
+        transform:
+
+          translate(0, 0)
+          rotate(-35deg)
+          scale(0.7);
       }
 
 
-      @keyframes respirar {
+      8% {
 
-        0%,
-        100% {
+        opacity:
+          1;
+      }
 
-          transform:
-            scale(1);
-        }
 
-        50% {
+      70% {
 
-          transform:
-            scale(1.025);
-        }
+        opacity:
+          1;
+      }
+
+
+      100% {
+
+        opacity:
+          0;
+
+        transform:
+
+          translate(-280px, 280px)
+          rotate(-35deg)
+          scale(1);
+      }
+    }
+
+
+    /* =========================
+       TELÉFONOS PEQUEÑOS
+       ========================= */
+
+    @media (max-width: 380px) {
+
+      main {
+
+        padding:
+          35px 20px;
+      }
+
+
+      .symbol {
+
+        width:
+          95px;
+
+        height:
+          95px;
+      }
+
+
+      h1 {
+
+        font-size:
+          34px;
+      }
+
+
+      .message {
+
+        font-size:
+          15px;
+      }
+    }
+
+
+    /* =========================
+       REDUCIR ANIMACIONES
+       SI EL TELÉFONO LO PIDE
+       ========================= */
+
+    @media (
+      prefers-reduced-motion: reduce
+    ) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation:
+          none !important;
+
+        transition:
+          none !important;
       }
     }
 
@@ -510,8 +830,31 @@
 <body>
 
 
+  <!-- =========================
+       CIELO
+       ========================= -->
+
   <div class="stars"></div>
 
+
+  <!-- ESTRELLAS FUGACES -->
+
+  <div
+    class="shooting-star shooting-star-1"
+  ></div>
+
+  <div
+    class="shooting-star shooting-star-2"
+  ></div>
+
+  <div
+    class="shooting-star shooting-star-3"
+  ></div>
+
+
+  <!-- =========================
+       CONTENIDO PRINCIPAL
+       ========================= -->
 
   <main>
 
@@ -557,11 +900,14 @@
     </div>
 
 
-    <!-- MENSAJE -->
+    <!-- =========================
+         MENSAJE
+         ========================= -->
 
     <p class="message">
 
-      Hay canciones que simplemente escuchamos.
+      Hay canciones que simplemente
+      escuchamos.
 
       <br>
 
@@ -586,7 +932,9 @@
     </p>
 
 
-    <!-- BOTÓN -->
+    <!-- =========================
+         BOTÓN
+         ========================= -->
 
     <a
       class="play"
@@ -594,14 +942,18 @@
       id="playButton"
     >
 
-      <span>▶</span>
+      <span>
+        ▶
+      </span>
 
       Escuchar Open Arms
 
     </a>
 
 
-    <!-- PIE -->
+    <!-- =========================
+         PIE
+         ========================= -->
 
     <footer>
 
