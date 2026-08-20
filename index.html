@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -22,45 +21,33 @@
 
   <title>Astheria — Open Arms</title>
 
-
   <style>
-
-    /* =====================================
-       CONFIGURACIÓN GENERAL
-       ===================================== */
 
     * {
       box-sizing: border-box;
     }
 
-
     html {
       min-height: 100%;
     }
 
-
     body {
-
       margin: 0;
-
       min-height: 100vh;
 
       color: #f4efe4;
 
       background:
-
         radial-gradient(
           circle at 50% 15%,
           rgba(216,181,106,0.16),
           transparent 30%
         ),
-
         radial-gradient(
           circle at 20% 80%,
           rgba(70,110,160,0.14),
           transparent 30%
         ),
-
         linear-gradient(
           160deg,
           #07111f 0%,
@@ -73,64 +60,49 @@
         serif;
 
       display: flex;
-
       justify-content: center;
-
       align-items: center;
 
       overflow-x: hidden;
-
       position: relative;
     }
 
 
-    /* =====================================
-       CIELO
-       ===================================== */
+    /* =================================
+       CIELO ESTRELLADO
+       ================================= */
 
     .stars {
-
       position: fixed;
-
       inset: 0;
 
       width: 100%;
       height: 100%;
 
       pointer-events: none;
-
       overflow: hidden;
 
       z-index: 0;
     }
 
 
-    /* =====================================
-       ESTRELLAS PEQUEÑAS
-       ===================================== */
-
     .stars::before {
-
       content: "";
 
       position: absolute;
-
       inset: 0;
 
       background-image:
-
         radial-gradient(
           circle,
           rgba(255,255,255,0.9) 1px,
           transparent 1.6px
         ),
-
         radial-gradient(
           circle,
           rgba(240,217,154,0.7) 1px,
           transparent 1.6px
         ),
-
         radial-gradient(
           circle,
           rgba(255,255,255,0.55) 1px,
@@ -138,13 +110,11 @@
         );
 
       background-size:
-
         83px 101px,
         137px 149px,
         191px 173px;
 
       background-position:
-
         12px 23px,
         48px 71px,
         91px 37px;
@@ -155,15 +125,12 @@
 
 
     .stars::after {
-
       content: "";
 
       position: absolute;
-
       inset: 0;
 
       background-image:
-
         radial-gradient(
           circle,
           rgba(255,255,255,0.8) 1.2px,
@@ -176,81 +143,54 @@
       background-position:
         35px 82px;
 
-      opacity:
-        0.45;
+      opacity: 0.45;
 
       animation:
         brilloEstrellas 7s ease-in-out infinite alternate-reverse;
     }
 
 
-    /* =====================================
+    /* =================================
        ESTRELLAS FUGACES
-       ===================================== */
+       ================================= */
 
     .shooting-star {
-
       position: fixed;
 
       width: 4px;
-
       height: 4px;
 
-      background:
-        #fffdf0;
+      background: #fffdf0;
 
-      border-radius:
-        50%;
+      border-radius: 50%;
 
       box-shadow:
+        0 0 7px #ffffff,
+        0 0 16px #f0d99a,
+        0 0 28px rgba(240,217,154,0.65);
 
-        0 0 7px
-        #ffffff,
+      opacity: 0;
 
-        0 0 16px
-        #f0d99a,
+      pointer-events: none;
 
-        0 0 28px
-        rgba(240,217,154,0.65);
+      z-index: 1;
 
-      opacity:
-        0;
-
-      pointer-events:
-        none;
-
-      z-index:
-        1;
-
-      transform:
-        rotate(-35deg);
+      transform: rotate(-35deg);
     }
 
 
-    /* COLA DE LA ESTRELLA */
-
     .shooting-star::after {
+      content: "";
 
-      content:
-        "";
+      position: absolute;
 
-      position:
-        absolute;
+      width: 120px;
+      height: 3px;
 
-      width:
-        120px;
-
-      height:
-        3px;
-
-      top:
-        1px;
-
-      right:
-        2px;
+      top: 1px;
+      right: 2px;
 
       background:
-
         linear-gradient(
           90deg,
           transparent,
@@ -259,8 +199,7 @@
           #fff8df
         );
 
-      border-radius:
-        50%;
+      border-radius: 50%;
 
       box-shadow:
         0 0 5px
@@ -268,316 +207,225 @@
     }
 
 
-    /* =====================================
-       POSICIÓN DE CADA FUGAZ
-       ===================================== */
-
     .shooting-star-1 {
-
-      top:
-        12%;
-
-      left:
-        92%;
+      top: 12%;
+      left: 92%;
 
       animation:
         estrellaFugaz 3.5s linear infinite;
 
-      animation-delay:
-        0.5s;
+      animation-delay: 0.5s;
     }
 
 
     .shooting-star-2 {
-
-      top:
-        32%;
-
-      left:
-        80%;
+      top: 32%;
+      left: 80%;
 
       animation:
         estrellaFugaz 4s linear infinite;
 
-      animation-delay:
-        2s;
+      animation-delay: 2s;
     }
 
 
     .shooting-star-3 {
-
-      top:
-        52%;
-
-      left:
-        95%;
+      top: 52%;
+      left: 95%;
 
       animation:
         estrellaFugaz 3.2s linear infinite;
 
-      animation-delay:
-        3.5s;
+      animation-delay: 3.5s;
     }
 
 
     .shooting-star-4 {
-
-      top:
-        22%;
-
-      left:
-        65%;
+      top: 22%;
+      left: 65%;
 
       animation:
         estrellaFugaz 4.5s linear infinite;
 
-      animation-delay:
-        5s;
+      animation-delay: 5s;
     }
 
-
-    /* =====================================
-       ANIMACIÓN DE LAS FUGACES
-       ===================================== */
 
     @keyframes estrellaFugaz {
 
       0% {
-
-        opacity:
-          0;
+        opacity: 0;
 
         transform:
-          translate(
-            0,
-            0
-          )
+          translate(0, 0)
           rotate(-35deg)
           scale(0.6);
       }
 
-
       8% {
-
-        opacity:
-          1;
+        opacity: 1;
       }
-
 
       15% {
-
-        opacity:
-          1;
+        opacity: 1;
       }
-
 
       65% {
-
-        opacity:
-          1;
+        opacity: 1;
       }
 
-
       100% {
-
-        opacity:
-          0;
+        opacity: 0;
 
         transform:
-          translate(
-            -420px,
-            420px
-          )
+          translate(-420px, 420px)
           rotate(-35deg)
           scale(1);
       }
-
     }
 
-
-    /* =====================================
-       BRILLO DE LAS ESTRELLAS
-       ===================================== */
 
     @keyframes brilloEstrellas {
 
       0% {
-
-        opacity:
-          0.35;
+        opacity: 0.35;
       }
-
 
       50% {
-
-        opacity:
-          0.8;
+        opacity: 0.8;
       }
-
 
       100% {
-
-        opacity:
-          0.45;
+        opacity: 0.45;
       }
-
     }
 
 
-    /* =====================================
+    /* =================================
        CONTENIDO
-       ===================================== */
+       ================================= */
 
     main {
+      width: min(92vw, 460px);
 
-      width:
-        min(
-          92vw,
-          460px
-        );
+      padding: 48px 24px;
 
-      padding:
-        48px 24px;
+      text-align: center;
 
-      text-align:
-        center;
+      position: relative;
 
-      position:
-        relative;
-
-      z-index:
-        5;
+      z-index: 5;
 
       animation:
         aparecer 1.4s ease;
     }
 
 
-    /* =====================================
+    /* =================================
        SÍMBOLO DE ASTHERIA
-       ===================================== */
+       ================================= */
 
     .symbol {
+      width: 108px;
+      height: 108px;
 
-      width:
-        108px;
-
-      height:
-        108px;
-
-      margin:
-        0 auto 26px;
+      margin: 0 auto 26px;
 
       border:
         1px solid
-        rgba(
-          216,
-          181,
-          106,
-          0.55
-        );
+        rgba(216,181,106,0.55);
 
-      border-radius:
-        50%;
+      border-radius: 50%;
 
-      display:
-        grid;
+      display: grid;
+      place-items: center;
 
-      place-items:
-        center;
-
-      position:
-        relative;
+      position: relative;
 
       box-shadow:
-
         0 0 45px
-        rgba(
-          216,
-          181,
-          106,
-          0.08
-        );
+        rgba(216,181,106,0.08);
 
       animation:
         respirar 4s ease-in-out infinite;
     }
 
 
-    .symbol::before,
-    .symbol::after {
+    /*
+      Estrella de seis puntas sólida.
+      Dos triángulos superpuestos.
+    */
 
-      content:
-        "";
+    .six-point-star {
+      width: 58px;
+      height: 58px;
 
-      position:
-        absolute;
+      position: relative;
 
-      width:
-        7px;
+      display: block;
 
-      height:
-        7px;
-
-      background:
-        #d8b56a;
-
-      border-radius:
-        50%;
-    }
-
-
-    .symbol::before {
-
-      top:
-        15px;
-
-      left:
-        23px;
-    }
-
-
-    .symbol::after {
-
-      bottom:
-        18px;
-
-      right:
-        19px;
-    }
-
-
-    .star {
-
-      color:
-        #f0d99a;
-
-      font-size:
-        46px;
-
-      line-height:
-        1;
-
-      text-shadow:
-
-        0 0 20px
-        rgba(
-          240,
-          217,
-          154,
-          0.25
+      filter:
+        drop-shadow(
+          0 0 9px
+          rgba(240,217,154,0.32)
         );
     }
 
 
-    /* =====================================
+    .six-point-star::before,
+    .six-point-star::after {
+      content: "";
+
+      position: absolute;
+
+      width: 0;
+      height: 0;
+
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+    }
+
+
+    /*
+      Triángulo hacia arriba
+    */
+
+    .six-point-star::before {
+      border-left:
+        29px solid transparent;
+
+      border-right:
+        29px solid transparent;
+
+      border-bottom:
+        50px solid #f0d99a;
+    }
+
+
+    /*
+      Triángulo hacia abajo
+    */
+
+    .six-point-star::after {
+      border-left:
+        29px solid transparent;
+
+      border-right:
+        29px solid transparent;
+
+      border-top:
+        50px solid #f0d99a;
+    }
+
+
+    /* =================================
        NOMBRE
-       ===================================== */
+       ================================= */
 
     .name {
-
-      color:
-        #f0d99a;
+      color: #f0d99a;
 
       font-size:
         clamp(
@@ -586,53 +434,38 @@
           35px
         );
 
-      letter-spacing:
-        0.30em;
+      letter-spacing: 0.30em;
 
-      margin-left:
-        0.30em;
+      margin-left: 0.30em;
 
-      font-weight:
-        normal;
+      font-weight: normal;
     }
 
 
     .subtitle {
+      margin-top: 13px;
 
-      margin-top:
-        13px;
+      color: #b9b3a6;
 
-      color:
-        #b9b3a6;
+      font-size: 15px;
 
-      font-size:
-        15px;
+      font-style: italic;
 
-      font-style:
-        italic;
-
-      letter-spacing:
-        0.05em;
+      letter-spacing: 0.05em;
     }
 
 
-    /* =====================================
+    /* =================================
        SEPARADOR
-       ===================================== */
+       ================================= */
 
     .divider {
+      width: 100px;
+      height: 1px;
 
-      width:
-        100px;
-
-      height:
-        1px;
-
-      margin:
-        30px auto;
+      margin: 30px auto;
 
       background:
-
         linear-gradient(
           90deg,
           transparent,
@@ -642,17 +475,14 @@
     }
 
 
-    /* =====================================
-       OPEN ARMS
-       ===================================== */
+    /* =================================
+       CANCIÓN
+       ================================= */
 
     h1 {
+      margin: 0;
 
-      margin:
-        0;
-
-      color:
-        #f4efe4;
+      color: #f4efe4;
 
       font-size:
         clamp(
@@ -661,172 +491,115 @@
           52px
         );
 
-      font-weight:
-        normal;
+      font-weight: normal;
 
-      letter-spacing:
-        0.06em;
+      letter-spacing: 0.06em;
     }
 
 
     .epic {
+      margin-top: 9px;
 
-      margin-top:
-        9px;
+      color: #b9b3a6;
 
-      color:
-        #b9b3a6;
+      font-size: 14px;
 
-      font-size:
-        14px;
+      letter-spacing: 0.16em;
 
-      letter-spacing:
-        0.16em;
-
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
     }
 
 
-    /* =====================================
+    /* =================================
        MENSAJE
-       ===================================== */
+       ================================= */
 
     .message {
-
       margin:
         30px auto 32px;
 
-      max-width:
-        350px;
+      max-width: 350px;
 
-      color:
-        #d8d2c5;
+      color: #d8d2c5;
 
-      line-height:
-        1.8;
+      line-height: 1.8;
 
-      font-size:
-        16px;
+      font-size: 16px;
     }
 
 
     .message strong {
+      color: #f0d99a;
 
-      color:
-        #f0d99a;
-
-      font-weight:
-        normal;
+      font-weight: normal;
     }
 
 
-    /* =====================================
+    /* =================================
        BOTÓN
-       ===================================== */
+       ================================= */
 
     .play {
+      display: inline-flex;
 
-      display:
-        inline-flex;
+      align-items: center;
+      justify-content: center;
 
-      align-items:
-        center;
+      gap: 11px;
 
-      justify-content:
-        center;
-
-      gap:
-        11px;
-
-      padding:
-        16px 29px;
+      padding: 16px 29px;
 
       border:
         1px solid
-        rgba(
-          216,
-          181,
-          106,
-          0.75
-        );
+        rgba(216,181,106,0.75);
 
-      border-radius:
-        999px;
+      border-radius: 999px;
 
-      color:
-        #101a27;
+      color: #101a27;
 
-      background:
-        #f0d99a;
+      background: #f0d99a;
 
-      text-decoration:
-        none;
+      text-decoration: none;
 
-      font-family:
-        inherit;
+      font-family: inherit;
 
-      font-size:
-        17px;
+      font-size: 17px;
 
-      letter-spacing:
-        0.03em;
+      letter-spacing: 0.03em;
 
       transition:
-
-        transform
-        0.2s ease,
-
-        box-shadow
-        0.2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 
       box-shadow:
-
         0 8px 30px
-        rgba(
-          0,
-          0,
-          0,
-          0.25
-        );
+        rgba(0,0,0,0.25);
     }
 
 
     .play:hover {
-
       transform:
         translateY(-2px);
 
       box-shadow:
-
         0 10px 34px
-        rgba(
-          216,
-          181,
-          106,
-          0.22
-        );
+        rgba(216,181,106,0.22);
     }
 
 
     .play span {
-
-      font-size:
-        18px;
+      font-size: 18px;
     }
 
 
-    /* =====================================
+    /* =================================
        PIE
-       ===================================== */
+       ================================= */
 
     footer {
-
-      margin-top:
-        48px;
+      margin-top: 48px;
 
       color:
-
         rgba(
           216,
           210,
@@ -834,117 +607,101 @@
           0.5
         );
 
-      font-size:
-        12px;
+      font-size: 12px;
 
-      letter-spacing:
-        0.08em;
+      letter-spacing: 0.08em;
     }
 
 
-    /* =====================================
+    /* =================================
        ANIMACIÓN DE ENTRADA
-       ===================================== */
+       ================================= */
 
     @keyframes aparecer {
 
       from {
-
-        opacity:
-          0;
+        opacity: 0;
 
         transform:
-          translateY(
-            15px
-          );
+          translateY(15px);
       }
-
 
       to {
-
-        opacity:
-          1;
+        opacity: 1;
 
         transform:
-          translateY(
-            0
-          );
+          translateY(0);
       }
-
     }
 
 
-    /* =====================================
+    /* =================================
        RESPIRACIÓN DEL SÍMBOLO
-       ===================================== */
+       ================================= */
 
     @keyframes respirar {
 
       0%,
       100% {
-
         transform:
           scale(1);
       }
 
-
       50% {
-
         transform:
           scale(1.025);
       }
-
     }
 
 
-    /* =====================================
+    /* =================================
        TELÉFONOS PEQUEÑOS
-       ===================================== */
+       ================================= */
 
-    @media (
-      max-width: 380px
-    ) {
+    @media (max-width: 380px) {
 
       main {
-
         padding:
           35px 20px;
       }
 
-
       .symbol {
-
-        width:
-          95px;
-
-        height:
-          95px;
+        width: 95px;
+        height: 95px;
       }
 
+      .six-point-star {
+        width: 52px;
+        height: 52px;
+      }
+
+      .six-point-star::before {
+        border-left-width: 26px;
+        border-right-width: 26px;
+        border-bottom-width: 45px;
+      }
+
+      .six-point-star::after {
+        border-left-width: 26px;
+        border-right-width: 26px;
+        border-top-width: 45px;
+      }
 
       h1 {
-
-        font-size:
-          34px;
+        font-size: 34px;
       }
-
 
       .message {
-
-        font-size:
-          15px;
+        font-size: 15px;
       }
-
     }
 
 
-    /* =====================================
-       RESPETAR REDUCCIÓN DE MOVIMIENTO
-       ===================================== */
+    /* =================================
+       REDUCIR ANIMACIONES
+       ================================= */
 
-    @media (
-      prefers-reduced-motion: reduce
-    ) {
+    @media (prefers-reduced-motion: reduce) {
 
       *,
       *::before,
@@ -956,7 +713,6 @@
         transition:
           none !important;
       }
-
     }
 
   </style>
@@ -967,54 +723,46 @@
 <body>
 
 
-  <!-- =====================================
-       CIELO ESTRELLADO
-       ===================================== -->
+  <!-- CIELO -->
 
   <div class="stars"></div>
 
 
-  <!-- =====================================
-       ESTRELLAS FUGACES
-       ===================================== -->
+  <!-- ESTRELLAS FUGACES -->
 
   <div
     class="shooting-star shooting-star-1"
   ></div>
 
-
   <div
     class="shooting-star shooting-star-2"
   ></div>
 
-
   <div
     class="shooting-star shooting-star-3"
   ></div>
-
 
   <div
     class="shooting-star shooting-star-4"
   ></div>
 
 
-  <!-- =====================================
-       CONTENIDO PRINCIPAL
-       ===================================== -->
+  <!-- CONTENIDO -->
 
   <main>
 
 
-    <!-- SÍMBOLO -->
+    <!-- ESTRELLA DE SEIS PUNTAS -->
 
     <div
       class="symbol"
-      aria-hidden="true"
+      aria-label="Símbolo de Astheria"
     >
 
-      <div class="star">
-        ✦
-      </div>
+      <span
+        class="six-point-star"
+        aria-hidden="true"
+      ></span>
 
     </div>
 
@@ -1096,9 +844,7 @@
     <!-- PIE -->
 
     <footer>
-
       Hecho especialmente para ti · 2026
-
     </footer>
 
 
