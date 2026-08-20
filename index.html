@@ -81,7 +81,7 @@
 
 
     /* =====================================
-       CIELO
+       CIELO ESTRELLADO
        ===================================== */
 
     .stars {
@@ -218,10 +218,7 @@
 
 
     /*
-      La cola queda ATRÁS de la cabeza.
-      La estrella se mueve hacia abajo-izquierda,
-      por lo que la cola debe extenderse
-      hacia arriba-derecha.
+      La cola queda detrás de la cabeza.
     */
 
     .shooting-star::after {
@@ -304,19 +301,21 @@
 
 
     /*
-      ESTRELLA CLÁSICA DE SEIS PUNTAS
+      ESTRELLA DE SEIS PUNTAS
 
-      Dos triángulos equiláteros
-      perfectamente superpuestos.
+      Más estilizada:
+      - puntas más largas
+      - centro más pequeño
+      - menor grosor visual
     */
 
     .six-point-star {
 
       width:
-        62px;
+        58px;
 
       height:
-        62px;
+        58px;
 
       display:
         block;
@@ -645,7 +644,6 @@
       }
     }
 
-
   </style>
 
 </head>
@@ -688,9 +686,9 @@
 
         <polygon
           points="
-            50,3
-            93.3,78
-            6.7,78
+            50,2
+            91,76
+            9,76
           "
           fill="#f0d99a"
         />
@@ -700,9 +698,9 @@
 
         <polygon
           points="
-            6.7,22
-            93.3,22
-            50,97
+            9,24
+            91,24
+            50,98
           "
           fill="#f0d99a"
         />
@@ -945,12 +943,7 @@
 
 
         /*
-          MOVIMIENTO:
-
-          X negativo = izquierda
-          Y positivo = abajo
-
-          Por tanto:
+          Movimiento:
 
           ↙
 
@@ -970,7 +963,7 @@
 
 
         /*
-          Aparición/desaparición.
+          Aparición y desaparición.
         */
 
         let opacidad =
@@ -1036,8 +1029,8 @@
 
 
     /*
-      Una estrella cada aproximadamente
-      2 segundos.
+      Una estrella aproximadamente
+      cada 2 segundos.
     */
 
     setInterval(
