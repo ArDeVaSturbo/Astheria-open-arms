@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -22,13 +21,11 @@
 
   <title>Astheria — Open Arms</title>
 
-
   <style>
 
     * {
       box-sizing: border-box;
     }
-
 
     html,
     body {
@@ -36,7 +33,6 @@
       width: 100%;
       min-height: 100%;
     }
-
 
     body {
 
@@ -217,10 +213,6 @@
     }
 
 
-    /*
-      La cola queda detrás de la cabeza.
-    */
-
     .shooting-star::after {
 
       content:
@@ -300,14 +292,9 @@
     }
 
 
-    /*
-      ESTRELLA DE SEIS PUNTAS
-
-      Más estilizada:
-      - puntas más largas
-      - centro más pequeño
-      - menor grosor visual
-    */
+    /* =====================================
+       ESTRELLA DE SEIS PUNTAS
+       ===================================== */
 
     .six-point-star {
 
@@ -584,39 +571,15 @@
        ANIMACIONES
        ===================================== */
 
-    @keyframes aparecer {
-
-      from {
-
-        opacity:
-          0;
-
-        transform:
-          translateY(15px);
-      }
-
-      to {
-
-        opacity:
-          1;
-
-        transform:
-          translateY(0);
-      }
-    }
-
-
     @keyframes respirar {
 
       0%,
       100% {
-
         transform:
           scale(1);
       }
 
       50% {
-
         transform:
           scale(1.025);
       }
@@ -626,19 +589,16 @@
     @keyframes brilloEstrellas {
 
       0% {
-
         opacity:
           0.35;
       }
 
       50% {
-
         opacity:
           0.8;
       }
 
       100% {
-
         opacity:
           0.45;
       }
@@ -652,23 +612,11 @@
 <body>
 
 
-  <!-- =====================================
-       CIELO
-       ===================================== -->
-
   <div class="stars"></div>
 
 
-  <!-- =====================================
-       CONTENIDO
-       ===================================== -->
-
   <main>
 
-
-    <!-- ===================================
-         ESTRELLA DE SEIS PUNTAS
-         =================================== -->
 
     <div
       class="symbol"
@@ -683,24 +631,22 @@
       >
 
         <!-- TRIÁNGULO SUPERIOR -->
-
         <polygon
           points="
-            50,2
-            91,76
-            9,76
+            50,0
+            96,80
+            4,80
           "
           fill="#f0d99a"
         />
 
 
         <!-- TRIÁNGULO INVERTIDO -->
-
         <polygon
           points="
-            9,24
-            91,24
-            50,98
+            4,20
+            96,20
+            50,100
           "
           fill="#f0d99a"
         />
@@ -709,10 +655,6 @@
 
     </div>
 
-
-    <!-- ===================================
-         NOMBRE
-         =================================== -->
 
     <div class="name">
       ASTHERIA
@@ -727,10 +669,6 @@
     <div class="divider"></div>
 
 
-    <!-- ===================================
-         CANCIÓN
-         =================================== -->
-
     <h1>
       Open Arms
     </h1>
@@ -740,10 +678,6 @@
       EPIC: The Musical
     </div>
 
-
-    <!-- ===================================
-         MENSAJE
-         =================================== -->
 
     <p class="message">
 
@@ -773,10 +707,6 @@
     </p>
 
 
-    <!-- ===================================
-         BOTÓN
-         =================================== -->
-
     <a
       class="play"
       href="#"
@@ -792,30 +722,17 @@
     </a>
 
 
-    <!-- ===================================
-         PIE
-         =================================== -->
-
     <footer>
-
       Hecho especialmente para ti · 2026
-
     </footer>
 
 
   </main>
 
 
-  <!-- =====================================
-       JAVASCRIPT
-       ESTRELLAS FUGACES
-       ===================================== -->
-
   <script>
 
-
     function crearEstrellaFugaz() {
-
 
       const estrella =
         document.createElement(
@@ -826,10 +743,6 @@
       estrella.className =
         "shooting-star";
 
-
-      /*
-        La cabeza aparece arriba/derecha.
-      */
 
       const inicioX =
         window.innerWidth
@@ -862,10 +775,6 @@
       );
 
 
-      /*
-        Variación de tamaño.
-      */
-
       const escala =
         0.7
         +
@@ -880,19 +789,11 @@
         (4 * escala) + "px";
 
 
-      /*
-        Distancia.
-      */
-
       const distancia =
         250
         +
         Math.random() * 220;
 
-
-      /*
-        Velocidad.
-      */
 
       const duracion =
         900
@@ -907,7 +808,6 @@
       function moverEstrella(
         ahora
       ) {
-
 
         const progreso =
           (
@@ -929,10 +829,6 @@
         }
 
 
-        /*
-          Movimiento suavizado.
-        */
-
         const suavizado =
           1
           -
@@ -941,14 +837,6 @@
             2
           );
 
-
-        /*
-          Movimiento:
-
-          ↙
-
-          La cabeza va adelante.
-        */
 
         const x =
           -distancia
@@ -961,10 +849,6 @@
           *
           suavizado;
 
-
-        /*
-          Aparición y desaparición.
-        */
 
         let opacidad =
           1;
@@ -1028,26 +912,16 @@
     }
 
 
-    /*
-      Una estrella aproximadamente
-      cada 2 segundos.
-    */
-
     setInterval(
       crearEstrellaFugaz,
       2000
     );
 
 
-    /*
-      Primera estrella.
-    */
-
     setTimeout(
       crearEstrellaFugaz,
       500
     );
-
 
   </script>
 
