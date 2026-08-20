@@ -50,11 +50,13 @@
           rgba(216,181,106,0.16),
           transparent 30%
         ),
+
         radial-gradient(
           circle at 20% 80%,
           rgba(70,110,160,0.14),
           transparent 30%
         ),
+
         linear-gradient(
           160deg,
           #07111f 0%,
@@ -215,6 +217,13 @@
     }
 
 
+    /*
+      La cola queda ATRÁS de la cabeza.
+      La estrella se mueve hacia abajo-izquierda,
+      por lo que la cola debe extenderse
+      hacia arriba-derecha.
+    */
+
     .shooting-star::after {
 
       content:
@@ -229,7 +238,7 @@
       height:
         3px;
 
-      right:
+      left:
         2px;
 
       top:
@@ -239,10 +248,10 @@
 
         linear-gradient(
           90deg,
-          transparent,
-          rgba(240,217,154,0.15),
+          #fff8df,
           rgba(240,217,154,0.7),
-          #fff8df
+          rgba(240,217,154,0.15),
+          transparent
         );
 
       border-radius:
@@ -251,7 +260,7 @@
 
 
     /* =====================================
-       SÍMBOLO
+       SÍMBOLO DE ASTHERIA
        ===================================== */
 
     .symbol {
@@ -295,11 +304,10 @@
 
 
     /*
-      ESTRELLA DE SEIS PUNTAS
+      ESTRELLA CLÁSICA DE SEIS PUNTAS
 
-      Se dibuja como un único SVG,
-      por lo que no depende de emojis
-      ni de fuentes del teléfono.
+      Dos triángulos equiláteros
+      perfectamente superpuestos.
     */
 
     .six-point-star {
@@ -638,53 +646,6 @@
     }
 
 
-    /* =====================================
-       TELÉFONOS PEQUEÑOS
-       ===================================== */
-
-    @media (max-width: 380px) {
-
-      main {
-
-        padding:
-          35px 20px;
-      }
-
-
-      .symbol {
-
-        width:
-          95px;
-
-        height:
-          95px;
-      }
-
-
-      .six-point-star {
-
-        width:
-          55px;
-
-        height:
-          55px;
-      }
-
-
-      h1 {
-
-        font-size:
-          34px;
-      }
-
-
-      .message {
-
-        font-size:
-          15px;
-      }
-    }
-
   </style>
 
 </head>
@@ -723,20 +684,25 @@
         aria-hidden="true"
       >
 
-        <!-- ESTRELLA SÓLIDA -->
+        <!-- TRIÁNGULO SUPERIOR -->
 
         <polygon
           points="
-            50,4
-            61,36
-            96,36
-            68,56
-            79,91
-            50,70
-            21,91
-            32,56
-            4,36
-            39,36
+            50,3
+            93.3,78
+            6.7,78
+          "
+          fill="#f0d99a"
+        />
+
+
+        <!-- TRIÁNGULO INVERTIDO -->
+
+        <polygon
+          points="
+            6.7,22
+            93.3,22
+            50,97
           "
           fill="#f0d99a"
         />
@@ -833,7 +799,9 @@
          =================================== -->
 
     <footer>
+
       Hecho especialmente para ti · 2026
+
     </footer>
 
 
@@ -847,37 +815,40 @@
 
   <script>
 
-    const cielo =
-      document.querySelector(".stars");
-
 
     function crearEstrellaFugaz() {
 
+
       const estrella =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
+
 
       estrella.className =
         "shooting-star";
 
 
       /*
-        Posición inicial.
-        Aparecen principalmente
-        desde la parte superior/derecha.
+        La cabeza aparece arriba/derecha.
       */
 
       const inicioX =
         window.innerWidth
-        * (
-          0.55 +
-          Math.random() * 0.5
+        *
+        (
+          0.60
+          +
+          Math.random() * 0.40
         );
 
 
       const inicioY =
         Math.random()
-        * window.innerHeight
-        * 0.55;
+        *
+        window.innerHeight
+        *
+        0.50;
 
 
       estrella.style.left =
@@ -894,44 +865,42 @@
 
 
       /*
-        Tamaño ligeramente aleatorio.
+        Variación de tamaño.
       */
 
       const escala =
-        0.7 +
+        0.7
+        +
         Math.random() * 0.7;
 
 
       estrella.style.width =
-        (3 * escala) + "px";
+        (4 * escala) + "px";
 
 
       estrella.style.height =
-        (3 * escala) + "px";
+        (4 * escala) + "px";
 
 
       /*
-        Distancia del recorrido.
+        Distancia.
       */
 
       const distancia =
-        250 +
+        250
+        +
         Math.random() * 220;
 
 
       /*
-        Duración.
+        Velocidad.
       */
 
       const duracion =
-        900 +
+        900
+        +
         Math.random() * 900;
 
-
-      /*
-        Animación manual usando
-        requestAnimationFrame.
-      */
 
       const inicio =
         performance.now();
@@ -941,12 +910,20 @@
         ahora
       ) {
 
+
         const progreso =
-          (ahora - inicio)
-          / duracion;
+          (
+            ahora
+            -
+            inicio
+          )
+          /
+          duracion;
 
 
-        if (progreso >= 1) {
+        if (
+          progreso >= 1
+        ) {
 
           estrella.remove();
 
@@ -955,48 +932,76 @@
 
 
         /*
-          Suavizado.
+          Movimiento suavizado.
         */
 
         const suavizado =
-          1 -
+          1
+          -
           Math.pow(
             1 - progreso,
             2
           );
 
 
+        /*
+          MOVIMIENTO:
+
+          X negativo = izquierda
+          Y positivo = abajo
+
+          Por tanto:
+
+          ↙
+
+          La cabeza va adelante.
+        */
+
         const x =
           -distancia
-          * suavizado;
+          *
+          suavizado;
 
 
         const y =
           distancia
-          * suavizado;
+          *
+          suavizado;
 
 
         /*
-          Aparición y desaparición.
+          Aparición/desaparición.
         */
 
         let opacidad =
           1;
 
 
-        if (progreso < 0.12) {
+        if (
+          progreso < 0.12
+        ) {
 
           opacidad =
-            progreso / 0.12;
+            progreso
+            /
+            0.12;
 
         }
-        else if (progreso > 0.75) {
+        else if (
+          progreso > 0.75
+        ) {
 
           opacidad =
-            1 -
+            1
+            -
             (
-              (progreso - 0.75)
-              / 0.25
+              (
+                progreso
+                -
+                0.75
+              )
+              /
+              0.25
             );
         }
 
@@ -1006,17 +1011,20 @@
 
 
         estrella.style.transform =
-          `translate3d(
+          `
+          translate3d(
             ${x}px,
             ${y}px,
             0
           )
-          rotate(-35deg)`;
+          rotate(-35deg)
+          `;
 
 
         requestAnimationFrame(
           moverEstrella
         );
+
       }
 
 
@@ -1028,8 +1036,8 @@
 
 
     /*
-      Una estrella aproximadamente
-      cada 2 segundos.
+      Una estrella cada aproximadamente
+      2 segundos.
     */
 
     setInterval(
@@ -1039,14 +1047,14 @@
 
 
     /*
-      Primera estrella después
-      de medio segundo.
+      Primera estrella.
     */
 
     setTimeout(
       crearEstrellaFugaz,
       500
     );
+
 
   </script>
 
