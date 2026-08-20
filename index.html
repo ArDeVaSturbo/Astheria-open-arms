@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <meta name="theme-color" content="#07111f">
+  <meta
+    name="theme-color"
+    content="#07111f"
+  >
 
   <title>Astheria — Open Arms</title>
+
 
   <style>
 
@@ -16,18 +24,29 @@
       box-sizing: border-box;
     }
 
+
     body {
+
       margin: 0;
+
       min-height: 100vh;
 
       color: #f4efe4;
 
       background:
+
         radial-gradient(
-          circle at 50% 20%,
-          rgba(216,181,106,0.14),
+          circle at 50% 18%,
+          rgba(216,181,106,0.16),
           transparent 30%
         ),
+
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(70,110,160,0.12),
+          transparent 28%
+        ),
+
         linear-gradient(
           160deg,
           #07111f,
@@ -40,16 +59,23 @@
         serif;
 
       display: flex;
+
       justify-content: center;
+
       align-items: center;
 
       overflow-x: hidden;
+
+      position: relative;
     }
+
 
     /* ESTRELLAS */
 
     .stars {
+
       position: fixed;
+
       inset: 0;
 
       pointer-events: none;
@@ -57,11 +83,13 @@
       opacity: 0.7;
 
       background-image:
+
         radial-gradient(
           circle,
           rgba(255,255,255,0.85) 1px,
           transparent 1.5px
         ),
+
         radial-gradient(
           circle,
           rgba(216,181,106,0.55) 1px,
@@ -69,36 +97,48 @@
         );
 
       background-size:
+
         97px 113px,
         151px 137px;
 
       background-position:
+
         17px 29px,
         61px 13px;
     }
 
+
     /* CONTENIDO */
 
     main {
-      width: min(92vw, 460px);
 
-      padding: 42px 24px;
+      width:
+        min(92vw, 460px);
+
+      padding:
+        48px 24px;
 
       text-align: center;
 
       position: relative;
 
       z-index: 1;
+
+      animation:
+        aparecer 1.4s ease;
     }
+
 
     /* SÍMBOLO */
 
     .symbol {
 
-      width: 104px;
-      height: 104px;
+      width: 108px;
 
-      margin: 0 auto 25px;
+      height: 108px;
+
+      margin:
+        0 auto 26px;
 
       border:
         1px solid
@@ -107,14 +147,17 @@
       border-radius: 50%;
 
       display: grid;
+
       place-items: center;
 
       position: relative;
 
       box-shadow:
+
         0 0 45px
         rgba(216,181,106,0.08);
     }
+
 
     .symbol::before,
     .symbol::after {
@@ -123,82 +166,108 @@
 
       position: absolute;
 
-      width: 8px;
-      height: 8px;
+      width: 7px;
 
-      background: #d8b56a;
+      height: 7px;
+
+      background:
+        #d8b56a;
 
       border-radius: 50%;
     }
 
+
     .symbol::before {
 
-      top: 13px;
-      left: 22px;
+      top: 15px;
 
+      left: 23px;
     }
+
 
     .symbol::after {
 
       bottom: 18px;
-      right: 17px;
 
+      right: 19px;
     }
+
 
     .star {
 
-      color: #f0d99a;
+      color:
+        #f0d99a;
 
-      font-size: 43px;
+      font-size:
+        46px;
 
       line-height: 1;
 
+      text-shadow:
+        0 0 20px
+        rgba(240,217,154,0.25);
     }
 
-    /* NOMBRE */
+
+    /* ASTHERIA */
 
     .name {
 
-      letter-spacing: 0.32em;
-
-      margin-left: 0.32em;
-
-      color: #f0d99a;
+      color:
+        #f0d99a;
 
       font-size:
         clamp(
-          24px,
+          25px,
           8vw,
-          34px
+          35px
         );
 
-      font-weight: normal;
+      letter-spacing:
+        0.30em;
+
+      margin-left:
+        0.30em;
+
+      font-weight:
+        normal;
     }
+
 
     .subtitle {
 
-      margin-top: 12px;
+      margin-top:
+        13px;
 
-      color: #b9b3a6;
+      color:
+        #b9b3a6;
 
-      font-size: 15px;
+      font-size:
+        15px;
 
-      font-style: italic;
+      font-style:
+        italic;
 
-      letter-spacing: 0.08em;
+      letter-spacing:
+        0.05em;
     }
+
 
     /* SEPARADOR */
 
     .divider {
 
-      width: 90px;
+      width:
+        100px;
 
-      height: 1px;
+      height:
+        1px;
 
-      margin: 28px auto;
+      margin:
+        30px auto;
 
       background:
+
         linear-gradient(
           90deg,
           transparent,
@@ -207,85 +276,126 @@
         );
     }
 
-    /* OPEN ARMS */
+
+    /* CANCIÓN */
 
     h1 {
 
-      margin: 0;
+      margin:
+        0;
+
+      color:
+        #f4efe4;
 
       font-size:
         clamp(
-          34px,
-          10vw,
-          48px
+          38px,
+          11vw,
+          52px
         );
 
-      font-weight: normal;
+      font-weight:
+        normal;
 
-      letter-spacing: 0.08em;
+      letter-spacing:
+        0.06em;
     }
+
 
     .epic {
 
-      margin-top: 8px;
+      margin-top:
+        9px;
 
-      color: #b9b3a6;
+      color:
+        #b9b3a6;
 
-      font-size: 15px;
+      font-size:
+        14px;
 
-      letter-spacing: 0.12em;
+      letter-spacing:
+        0.16em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
     }
+
 
     /* MENSAJE */
 
     .message {
 
       margin:
-        28px auto
-        30px;
+        30px auto
+        32px;
 
-      max-width: 330px;
+      max-width:
+        350px;
 
-      color: #d8d2c5;
+      color:
+        #d8d2c5;
 
-      line-height: 1.7;
+      line-height:
+        1.8;
 
-      font-size: 16px;
+      font-size:
+        16px;
     }
+
+
+    .message strong {
+
+      color:
+        #f0d99a;
+
+      font-weight:
+        normal;
+    }
+
 
     /* BOTÓN */
 
     .play {
 
-      display: inline-flex;
+      display:
+        inline-flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      gap: 11px;
+      justify-content:
+        center;
+
+      gap:
+        11px;
 
       padding:
-        15px
-        28px;
+        16px 29px;
 
       border:
         1px solid
         rgba(216,181,106,0.75);
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
-      color: #101a27;
+      color:
+        #101a27;
 
-      background: #f0d99a;
+      background:
+        #f0d99a;
 
-      text-decoration: none;
+      text-decoration:
+        none;
 
-      font-family: inherit;
+      font-family:
+        inherit;
 
-      font-size: 17px;
+      font-size:
+        17px;
 
-      letter-spacing: 0.04em;
+      letter-spacing:
+        0.03em;
 
       transition:
         transform 0.2s ease,
@@ -296,6 +406,7 @@
         rgba(0,0,0,0.25);
     }
 
+
     .play:hover {
 
       transform:
@@ -303,45 +414,109 @@
 
       box-shadow:
         0 10px 34px
-        rgba(216,181,106,0.2);
+        rgba(216,181,106,0.22);
     }
+
 
     .play span {
 
-      font-size: 18px;
-
+      font-size:
+        18px;
     }
+
 
     /* PIE */
 
     footer {
 
-      margin-top: 45px;
+      margin-top:
+        48px;
 
       color:
         rgba(
           216,
           210,
           197,
-          0.55
+          0.5
         );
 
-      font-size: 12px;
+      font-size:
+        12px;
 
-      letter-spacing: 0.08em;
+      letter-spacing:
+        0.08em;
+    }
+
+
+    /* ANIMACIÓN */
+
+    @keyframes aparecer {
+
+      from {
+
+        opacity:
+          0;
+
+        transform:
+          translateY(15px);
+      }
+
+      to {
+
+        opacity:
+          1;
+
+        transform:
+          translateY(0);
+      }
+    }
+
+
+    /* ANIMACIÓN SUAVE DEL SÍMBOLO */
+
+    @media (
+      prefers-reduced-motion: no-preference
+    ) {
+
+      .symbol {
+
+        animation:
+          respirar 4s ease-in-out infinite;
+      }
+
+
+      @keyframes respirar {
+
+        0%,
+        100% {
+
+          transform:
+            scale(1);
+        }
+
+        50% {
+
+          transform:
+            scale(1.025);
+        }
+      }
     }
 
   </style>
 
 </head>
 
+
 <body>
+
 
   <div class="stars"></div>
 
+
   <main>
 
-    <!-- SÍMBOLO DE ASTHERIA -->
+
+    <!-- SÍMBOLO -->
 
     <div
       class="symbol"
@@ -361,8 +536,9 @@
       ASTHERIA
     </div>
 
+
     <div class="subtitle">
-      a little piece of a journey
+      Un pequeño recuerdo de este viaje.
     </div>
 
 
@@ -375,6 +551,7 @@
       Open Arms
     </h1>
 
+
     <div class="epic">
       EPIC: The Musical
     </div>
@@ -384,12 +561,27 @@
 
     <p class="message">
 
-      Algunas canciones encuentran
-      su camino hasta la persona correcta.
+      Hay canciones que simplemente escuchamos.
 
       <br>
 
-      Esta encontró el suyo hasta ti.
+      Y hay canciones que, de alguna manera,
+      parecen hablarle directamente a alguien.
+
+      <br><br>
+
+      Esta es una de esas.
+
+      <br><br>
+
+      <strong>
+        Para ti, Astheria.
+      </strong>
+
+      <br>
+
+      Porque hay personas a las que vale la pena
+      recibir con los brazos abiertos.
 
     </p>
 
@@ -413,9 +605,10 @@
 
     <footer>
 
-      Made especially for Astheria · 2026
+      Hecho especialmente para ti · 2026
 
     </footer>
+
 
   </main>
 
